@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad
 {
+    self.title = @"书单";
     self.view.backgroundColor = [UIColor whiteColor];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.

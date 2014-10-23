@@ -25,7 +25,9 @@
 
 - (void)viewDidLoad
 {
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
+    leftView = [[LeftView alloc]initWithFrame:self.view.bounds];
+    [leftView bookName];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

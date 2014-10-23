@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LeftView.h"
 
 @interface LeftViewController : UIViewController
-
+{
+    LeftView *leftView;
+}
 @end

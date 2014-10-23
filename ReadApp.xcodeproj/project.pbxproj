@@ -24,6 +24,7 @@
 		9A6E134C19F4FA0B006C9E50 /* ReadAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E134B19F4FA0B006C9E50 /* ReadAppTests.m */; };
 		9AB6498B19F74F100071B60C /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6498A19F74F0F0071B60C /* LeftViewController.m */; };
 		9AB6498E19F74F240071B60C /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6498D19F74F240071B60C /* RightViewController.m */; };
+		9AD3E8B719F8D5300082F4D8 /* LeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3E8B619F8D52F0082F4D8 /* LeftView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		9AB6498A19F74F0F0071B60C /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		9AB6498C19F74F240071B60C /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
 		9AB6498D19F74F240071B60C /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
+		9AD3E8B519F8D52F0082F4D8 /* LeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftView.h; sourceTree = "<group>"; };
+		9AD3E8B619F8D52F0082F4D8 /* LeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftView.m; sourceTree = "<group>"; };
 		BFF276663F9ACFE428BF4476 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,16 +128,11 @@
 		9A6E132619F4FA0B006C9E50 /* ReadApp */ = {
 			isa = PBXGroup;
 			children = (
-				9A6E132F19F4FA0B006C9E50 /* AppDelegate.h */,
-				9A6E133019F4FA0B006C9E50 /* AppDelegate.m */,
+				9AD3E8B419F8D4FD0082F4D8 /* View */,
+				9AD3E8B319F8D4E50082F4D8 /* AppDelegate */,
+				9AD3E8B219F8D4C60082F4D8 /* Controller */,
 				9A6E133219F4FA0B006C9E50 /* Main.storyboard */,
-				9A6E133519F4FA0B006C9E50 /* ViewController.h */,
-				9A6E133619F4FA0B006C9E50 /* ViewController.m */,
 				9A6E133819F4FA0B006C9E50 /* Images.xcassets */,
-				9AB6498919F74F0F0071B60C /* LeftViewController.h */,
-				9AB6498A19F74F0F0071B60C /* LeftViewController.m */,
-				9AB6498C19F74F240071B60C /* RightViewController.h */,
-				9AB6498D19F74F240071B60C /* RightViewController.m */,
 				9A6E132719F4FA0B006C9E50 /* Supporting Files */,
 			);
 			path = ReadApp;
@@ -167,6 +165,37 @@
 				9A6E134819F4FA0B006C9E50 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9AD3E8B219F8D4C60082F4D8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A6E133519F4FA0B006C9E50 /* ViewController.h */,
+				9A6E133619F4FA0B006C9E50 /* ViewController.m */,
+				9AB6498919F74F0F0071B60C /* LeftViewController.h */,
+				9AB6498A19F74F0F0071B60C /* LeftViewController.m */,
+				9AB6498C19F74F240071B60C /* RightViewController.h */,
+				9AB6498D19F74F240071B60C /* RightViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9AD3E8B319F8D4E50082F4D8 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9A6E132F19F4FA0B006C9E50 /* AppDelegate.h */,
+				9A6E133019F4FA0B006C9E50 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		9AD3E8B419F8D4FD0082F4D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AD3E8B519F8D52F0082F4D8 /* LeftView.h */,
+				9AD3E8B619F8D52F0082F4D8 /* LeftView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		BC7BC5188F20A3111FB37747 /* Pods */ = {
@@ -315,6 +344,7 @@
 				9AB6498B19F74F100071B60C /* LeftViewController.m in Sources */,
 				9A6E133119F4FA0B006C9E50 /* AppDelegate.m in Sources */,
 				9A6E132D19F4FA0B006C9E50 /* main.m in Sources */,
+				9AD3E8B719F8D5300082F4D8 /* LeftView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

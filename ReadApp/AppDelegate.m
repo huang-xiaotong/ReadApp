@@ -9,22 +9,26 @@
 #import "AppDelegate.h"
 #import <MMDrawerController.h>
 #import "LeftViewController.h"
-#import "RightViewController.h"
+//#import "RightViewController.h"
 #import "ViewController.h"
-
+//#import <MMDrawerBarButtonItem.h>
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     ViewController *viewCtrl = [[ViewController alloc]init];
+    UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:viewCtrl];
     LeftViewController *leftCtrl = [[LeftViewController alloc]init];
-    RightViewController *rightCtrl = [[RightViewController alloc]init];
-    MMDrawerController *mmdrawerctrl = [[MMDrawerController alloc]initWithCenterViewController:viewCtrl leftDrawerViewController:leftCtrl rightDrawerViewController:rightCtrl];
-    self.window.rootViewController = mmdrawerctrl;
-        // Override point for customization after application launch.
+//    RightViewController *rightCtrl = [[RightViewController alloc]init];
+    MMDrawerController *drawerctrl = [[MMDrawerController alloc]initWithCenterViewController:navigation leftDrawerViewController:leftCtrl];
+    [drawerctrl setMaximumLeftDrawerWidth:160];
+    [drawerctrl setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [drawerctrl setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    self.window.rootViewController = drawerctrl;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 							
