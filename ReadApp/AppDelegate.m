@@ -23,7 +23,7 @@
     LeftViewController *leftCtrl = [[LeftViewController alloc]init];
 //    RightViewController *rightCtrl = [[RightViewController alloc]init];
     MMDrawerController *drawerctrl = [[MMDrawerController alloc]initWithCenterViewController:navigation leftDrawerViewController:leftCtrl];
-    [drawerctrl setMaximumLeftDrawerWidth:160];
+    [drawerctrl setMaximumLeftDrawerWidth:280];
     [drawerctrl setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [drawerctrl setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     self.window.rootViewController = drawerctrl;

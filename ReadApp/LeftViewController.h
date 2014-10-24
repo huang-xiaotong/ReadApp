@@ -10,7 +10,9 @@
 #import "LeftView.h"
 
 @interface LeftViewController : UIViewController
+<UITableViewDataSource,UITableViewDelegate>
 {
-    LeftView *leftView;
+    LeftView *m_leftView;
 }
+@property(nonatomic,retain)NSArray *listbookmenu;
 @end

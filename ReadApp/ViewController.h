@@ -10,5 +10,7 @@
 
 @interface ViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate>
-
+{
+    UITableView *m_tableView;
+}
 @end

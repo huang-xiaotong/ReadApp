@@ -10,4 +10,9 @@
 
 @interface LeftView : UIView
 <UITableViewDelegate, UITableViewDataSource>
+{
+}
+@property (nonatomic, retain) NSArray *listbookmenu;
+-(void) bookName;
+
 @end
