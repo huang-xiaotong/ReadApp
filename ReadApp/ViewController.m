@@ -23,21 +23,10 @@
     self.view.backgroundColor = [UIColor whiteColor];
     m_tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview:m_tableView];
-//    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Setting" style:UITabBarSystemItemContacts target:self action:@selector(clickSettings:)];
-//    self.navigationItem.leftBarButtonItem = anotherButton;
     [self setupLeftMenuButton];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
-//-(void)clickSettings:(id)sender
-//{
-//    LeftViewController *leftCtrl = [[LeftViewController alloc]init];
-//    MMDrawerController *drawerCtrl = [[MMDrawerController alloc]init];
-//    [drawerCtrl setLeftDrawerViewController:leftCtrl];
-//    [drawerCtrl setMaximumLeftDrawerWidth:280];
-//    [drawerCtrl setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
-//    [drawerCtrl setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
-//}
 - (void)setupLeftMenuButton
 {
     MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress)];
@@ -45,11 +34,8 @@
 }
 - (void)leftDrawerButtonPress
 {
-    
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-    
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 20;
 }
