@@ -12,5 +12,9 @@
 <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *m_tableView;
+    UITableViewCell *m_cell;
 }
+@property (nonatomic, retain)NSArray *listbookPicture;
+@property (nonatomic, retain)NSArray *listbookName;
+@property (nonatomic, retain)NSArray *listbookAuthor;
 @end

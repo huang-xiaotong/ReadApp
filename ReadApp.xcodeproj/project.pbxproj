@@ -8,6 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		776D04F1727E9E2F7C1A6D68 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF276663F9ACFE428BF4476 /* libPods.a */; };
+		9A1D87EC19FB6F3F0065337E /* 计算机程序的构造和解释8S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87D919FB6F3F0065337E /* 计算机程序的构造和解释8S.png */; };
+		9A1D87ED19FB6F3F0065337E /* 计算机程序设计艺术（第1卷）9S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87DA19FB6F3F0065337E /* 计算机程序设计艺术（第1卷）9S.png */; };
+		9A1D87EE19FB6F3F0065337E /* 计算机网络4S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87DB19FB6F3F0065337E /* 计算机网络4S.png */; };
+		9A1D87EF19FB6F3F0065337E /* 算法导论10S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87DC19FB6F3F0065337E /* 算法导论10S.png */; };
+		9A1D87F019FB6F3F0065337E /* 算法设计与分析基础17S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87DD19FB6F3F0065337E /* 算法设计与分析基础17S.png */; };
+		9A1D87F119FB6F3F0065337E /* 通灵芯片16S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87DE19FB6F3F0065337E /* 通灵芯片16S.png */; };
+		9A1D87F219FB6F3F0065337E /* 现代操作系统18S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87DF19FB6F3F0065337E /* 现代操作系统18S.png */; };
+		9A1D87F319FB6F3F0065337E /* ACM图灵奖20S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E019FB6F3F0065337E /* ACM图灵奖20S.png */; };
+		9A1D87F419FB6F3F0065337E /* ACM图灵奖演讲集14S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E119FB6F3F0065337E /* ACM图灵奖演讲集14S.png */; };
+		9A1D87F519FB6F3F0065337E /* Compilers15S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E219FB6F3F0065337E /* Compilers15S.png */; };
+		9A1D87F619FB6F3F0065337E /* Computer Architecture6S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E319FB6F3F0065337E /* Computer Architecture6S.png */; };
+		9A1D87F719FB6F3F0065337E /* Computer Networking11S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E419FB6F3F0065337E /* Computer Networking11S.png */; };
+		9A1D87F819FB6F3F0065337E /* Computer Networking19S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E519FB6F3F0065337E /* Computer Networking19S.png */; };
+		9A1D87F919FB6F3F0065337E /* Computer Systems5S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E619FB6F3F0065337E /* Computer Systems5S.png */; };
+		9A1D87FA19FB6F3F0065337E /* Concepts, Techniques, and Models of Computer Programming7S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E719FB6F3F0065337E /* Concepts, Techniques, and Models of Computer Programming7S.png */; };
+		9A1D87FB19FB6F3F0065337E /* Introduction to Algorithms13S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E819FB6F3F0065337E /* Introduction to Algorithms13S.png */; };
+		9A1D87FC19FB6F3F0065337E /* The Computer Music Tutorial12S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87E919FB6F3F0065337E /* The Computer Music Tutorial12S.png */; };
+		9A1D87FD19FB6F3F0065337E /* Hackers and Painters 3S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87EA19FB6F3F0065337E /* Hackers and Painters 3S.png */; };
+		9A1D87FE19FB6F3F0065337E /* Structure and Interpretation of Computer Programs - 2nd Edition (MIT) 2S.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A1D87EB19FB6F3F0065337E /* Structure and Interpretation of Computer Programs - 2nd Edition (MIT) 2S.png */; };
 		9A6E132119F4FA0B006C9E50 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6E132019F4FA0B006C9E50 /* Foundation.framework */; };
 		9A6E132319F4FA0B006C9E50 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6E132219F4FA0B006C9E50 /* CoreGraphics.framework */; };
 		9A6E132519F4FA0B006C9E50 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6E132419F4FA0B006C9E50 /* UIKit.framework */; };
@@ -23,7 +42,8 @@
 		9A6E134A19F4FA0B006C9E50 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9A6E134819F4FA0B006C9E50 /* InfoPlist.strings */; };
 		9A6E134C19F4FA0B006C9E50 /* ReadAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E134B19F4FA0B006C9E50 /* ReadAppTests.m */; };
 		9AB6498B19F74F100071B60C /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6498A19F74F0F0071B60C /* LeftViewController.m */; };
-		9AB6498E19F74F240071B60C /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6498D19F74F240071B60C /* RightViewController.m */; };
+		9AB6498E19F74F240071B60C /* PictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6498D19F74F240071B60C /* PictureViewController.m */; };
+		9ABC75D219FB43FB00793711 /* 深入理解计算机系统s.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABC75D119FB43F900793711 /* 深入理解计算机系统s.png */; };
 		9AD3E8B719F8D5300082F4D8 /* LeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD3E8B619F8D52F0082F4D8 /* LeftView.m */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +60,25 @@
 /* Begin PBXFileReference section */
 		04A9F88C3AF10015806EA0E7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		985989BC1DB5456418470B24 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9A1D87D919FB6F3F0065337E /* 计算机程序的构造和解释8S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "计算机程序的构造和解释8S.png"; sourceTree = "<group>"; };
+		9A1D87DA19FB6F3F0065337E /* 计算机程序设计艺术（第1卷）9S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "计算机程序设计艺术（第1卷）9S.png"; sourceTree = "<group>"; };
+		9A1D87DB19FB6F3F0065337E /* 计算机网络4S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "计算机网络4S.png"; sourceTree = "<group>"; };
+		9A1D87DC19FB6F3F0065337E /* 算法导论10S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "算法导论10S.png"; sourceTree = "<group>"; };
+		9A1D87DD19FB6F3F0065337E /* 算法设计与分析基础17S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "算法设计与分析基础17S.png"; sourceTree = "<group>"; };
+		9A1D87DE19FB6F3F0065337E /* 通灵芯片16S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通灵芯片16S.png"; sourceTree = "<group>"; };
+		9A1D87DF19FB6F3F0065337E /* 现代操作系统18S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "现代操作系统18S.png"; sourceTree = "<group>"; };
+		9A1D87E019FB6F3F0065337E /* ACM图灵奖20S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ACM图灵奖20S.png"; sourceTree = "<group>"; };
+		9A1D87E119FB6F3F0065337E /* ACM图灵奖演讲集14S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ACM图灵奖演讲集14S.png"; sourceTree = "<group>"; };
+		9A1D87E219FB6F3F0065337E /* Compilers15S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Compilers15S.png; sourceTree = "<group>"; };
+		9A1D87E319FB6F3F0065337E /* Computer Architecture6S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Computer Architecture6S.png"; sourceTree = "<group>"; };
+		9A1D87E419FB6F3F0065337E /* Computer Networking11S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Computer Networking11S.png"; sourceTree = "<group>"; };
+		9A1D87E519FB6F3F0065337E /* Computer Networking19S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Computer Networking19S.png"; sourceTree = "<group>"; };
+		9A1D87E619FB6F3F0065337E /* Computer Systems5S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Computer Systems5S.png"; sourceTree = "<group>"; };
+		9A1D87E719FB6F3F0065337E /* Concepts, Techniques, and Models of Computer Programming7S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Concepts, Techniques, and Models of Computer Programming7S.png"; sourceTree = "<group>"; };
+		9A1D87E819FB6F3F0065337E /* Introduction to Algorithms13S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Introduction to Algorithms13S.png"; sourceTree = "<group>"; };
+		9A1D87E919FB6F3F0065337E /* The Computer Music Tutorial12S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "The Computer Music Tutorial12S.png"; sourceTree = "<group>"; };
+		9A1D87EA19FB6F3F0065337E /* Hackers and Painters 3S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hackers and Painters 3S.png"; sourceTree = "<group>"; };
+		9A1D87EB19FB6F3F0065337E /* Structure and Interpretation of Computer Programs - 2nd Edition (MIT) 2S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Structure and Interpretation of Computer Programs - 2nd Edition (MIT) 2S.png"; sourceTree = "<group>"; };
 		9A6E131D19F4FA0B006C9E50 /* ReadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A6E132019F4FA0B006C9E50 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9A6E132219F4FA0B006C9E50 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -61,8 +100,9 @@
 		9A6E134B19F4FA0B006C9E50 /* ReadAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadAppTests.m; sourceTree = "<group>"; };
 		9AB6498919F74F0F0071B60C /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		9AB6498A19F74F0F0071B60C /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
-		9AB6498C19F74F240071B60C /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
-		9AB6498D19F74F240071B60C /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
+		9AB6498C19F74F240071B60C /* PictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureViewController.h; sourceTree = "<group>"; };
+		9AB6498D19F74F240071B60C /* PictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureViewController.m; sourceTree = "<group>"; };
+		9ABC75D119FB43F900793711 /* 深入理解计算机系统s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "深入理解计算机系统s.png"; sourceTree = "<group>"; };
 		9AD3E8B519F8D52F0082F4D8 /* LeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftView.h; sourceTree = "<group>"; };
 		9AD3E8B619F8D52F0082F4D8 /* LeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftView.m; sourceTree = "<group>"; };
 		BFF276663F9ACFE428BF4476 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +168,7 @@
 		9A6E132619F4FA0B006C9E50 /* ReadApp */ = {
 			isa = PBXGroup;
 			children = (
+				9ABC75D319FB444400793711 /* Picture */,
 				9AD3E8B419F8D4FD0082F4D8 /* View */,
 				9AD3E8B319F8D4E50082F4D8 /* AppDelegate */,
 				9AD3E8B219F8D4C60082F4D8 /* Controller */,
@@ -167,6 +208,33 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9ABC75D319FB444400793711 /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				9A1D87D919FB6F3F0065337E /* 计算机程序的构造和解释8S.png */,
+				9A1D87DA19FB6F3F0065337E /* 计算机程序设计艺术（第1卷）9S.png */,
+				9A1D87DB19FB6F3F0065337E /* 计算机网络4S.png */,
+				9A1D87DC19FB6F3F0065337E /* 算法导论10S.png */,
+				9A1D87DD19FB6F3F0065337E /* 算法设计与分析基础17S.png */,
+				9A1D87DE19FB6F3F0065337E /* 通灵芯片16S.png */,
+				9A1D87DF19FB6F3F0065337E /* 现代操作系统18S.png */,
+				9A1D87E019FB6F3F0065337E /* ACM图灵奖20S.png */,
+				9A1D87E119FB6F3F0065337E /* ACM图灵奖演讲集14S.png */,
+				9A1D87E219FB6F3F0065337E /* Compilers15S.png */,
+				9A1D87E319FB6F3F0065337E /* Computer Architecture6S.png */,
+				9A1D87E419FB6F3F0065337E /* Computer Networking11S.png */,
+				9A1D87E519FB6F3F0065337E /* Computer Networking19S.png */,
+				9A1D87E619FB6F3F0065337E /* Computer Systems5S.png */,
+				9A1D87E719FB6F3F0065337E /* Concepts, Techniques, and Models of Computer Programming7S.png */,
+				9A1D87E819FB6F3F0065337E /* Introduction to Algorithms13S.png */,
+				9A1D87E919FB6F3F0065337E /* The Computer Music Tutorial12S.png */,
+				9A1D87EA19FB6F3F0065337E /* Hackers and Painters 3S.png */,
+				9A1D87EB19FB6F3F0065337E /* Structure and Interpretation of Computer Programs - 2nd Edition (MIT) 2S.png */,
+				9ABC75D119FB43F900793711 /* 深入理解计算机系统s.png */,
+			);
+			name = Picture;
+			sourceTree = "<group>";
+		};
 		9AD3E8B219F8D4C60082F4D8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,8 +242,8 @@
 				9A6E133619F4FA0B006C9E50 /* ViewController.m */,
 				9AB6498919F74F0F0071B60C /* LeftViewController.h */,
 				9AB6498A19F74F0F0071B60C /* LeftViewController.m */,
-				9AB6498C19F74F240071B60C /* RightViewController.h */,
-				9AB6498D19F74F240071B60C /* RightViewController.m */,
+				9AB6498C19F74F240071B60C /* PictureViewController.h */,
+				9AB6498D19F74F240071B60C /* PictureViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -286,8 +354,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6E133919F4FA0B006C9E50 /* Images.xcassets in Resources */,
+				9A1D87F119FB6F3F0065337E /* 通灵芯片16S.png in Resources */,
+				9A1D87FD19FB6F3F0065337E /* Hackers and Painters 3S.png in Resources */,
 				9A6E132B19F4FA0B006C9E50 /* InfoPlist.strings in Resources */,
+				9A1D87F019FB6F3F0065337E /* 算法设计与分析基础17S.png in Resources */,
+				9A1D87FE19FB6F3F0065337E /* Structure and Interpretation of Computer Programs - 2nd Edition (MIT) 2S.png in Resources */,
+				9A1D87FA19FB6F3F0065337E /* Concepts, Techniques, and Models of Computer Programming7S.png in Resources */,
+				9A1D87F519FB6F3F0065337E /* Compilers15S.png in Resources */,
 				9A6E133419F4FA0B006C9E50 /* Main.storyboard in Resources */,
+				9A1D87EC19FB6F3F0065337E /* 计算机程序的构造和解释8S.png in Resources */,
+				9A1D87FC19FB6F3F0065337E /* The Computer Music Tutorial12S.png in Resources */,
+				9A1D87ED19FB6F3F0065337E /* 计算机程序设计艺术（第1卷）9S.png in Resources */,
+				9A1D87F919FB6F3F0065337E /* Computer Systems5S.png in Resources */,
+				9A1D87F819FB6F3F0065337E /* Computer Networking19S.png in Resources */,
+				9A1D87EE19FB6F3F0065337E /* 计算机网络4S.png in Resources */,
+				9A1D87FB19FB6F3F0065337E /* Introduction to Algorithms13S.png in Resources */,
+				9A1D87EF19FB6F3F0065337E /* 算法导论10S.png in Resources */,
+				9A1D87F619FB6F3F0065337E /* Computer Architecture6S.png in Resources */,
+				9A1D87F719FB6F3F0065337E /* Computer Networking11S.png in Resources */,
+				9A1D87F319FB6F3F0065337E /* ACM图灵奖20S.png in Resources */,
+				9A1D87F419FB6F3F0065337E /* ACM图灵奖演讲集14S.png in Resources */,
+				9ABC75D219FB43FB00793711 /* 深入理解计算机系统s.png in Resources */,
+				9A1D87F219FB6F3F0065337E /* 现代操作系统18S.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +427,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AB6498E19F74F240071B60C /* RightViewController.m in Sources */,
+				9AB6498E19F74F240071B60C /* PictureViewController.m in Sources */,
 				9A6E133719F4FA0B006C9E50 /* ViewController.m in Sources */,
 				9AB6498B19F74F100071B60C /* LeftViewController.m in Sources */,
 				9A6E133119F4FA0B006C9E50 /* AppDelegate.m in Sources */,

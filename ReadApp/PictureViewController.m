@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 黄晓彤. All rights reserved.
 //
 
-#import "RightViewController.h"
+#import "PictureViewController.h"
 
-@interface RightViewController ()
+@interface PictureViewController ()
 
 @end
 
-@implementation RightViewController
+@implementation PictureViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

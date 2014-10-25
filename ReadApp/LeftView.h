@@ -12,7 +12,6 @@
 <UITableViewDelegate, UITableViewDataSource>
 {
 }
-@property (nonatomic, retain) NSArray *listbookmenu;
--(void) bookName;
+-(void) bookName:(UITableView *)tableView :(NSArray*)bookmenu;
 
 @end

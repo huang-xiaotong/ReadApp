@@ -20,6 +20,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     ViewController *viewCtrl = [[ViewController alloc]init];
     UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:viewCtrl];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:78.0/255.0 green:156.0/255.0 blue:156.0/255.0 alpha:1.0]];
     LeftViewController *leftCtrl = [[LeftViewController alloc]init];
 //    RightViewController *rightCtrl = [[RightViewController alloc]init];
     MMDrawerController *drawerctrl = [[MMDrawerController alloc]initWithCenterViewController:navigation leftDrawerViewController:leftCtrl];

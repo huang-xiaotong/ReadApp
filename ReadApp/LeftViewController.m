@@ -28,15 +28,18 @@
     self.title = @"书单";
     self.view.backgroundColor = [UIColor whiteColor];
 //    m_leftView = [[LeftView alloc]initWithFrame:self.view.bounds];
-//    [m_leftView bookName];
+//    UITableView *tableView = [[UITableView alloc]init];
+//    NSArray *bookmenu = [[NSArray alloc]init];
+//    [m_leftView bookName:tableView :bookmenu];
 //    [self.view addSubview:m_leftView];
 //    NSLog(@"%@",m_leftView.listbookmenu);
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     NSArray *bookmenu = [[NSArray alloc]initWithObjects:@"深入理解计算机系统",@"Structure and Interpretation of Computer Programs - 2nd Edition (MIT)",@"Hackers and Painters",@"计算机网络",@"Computer Systems",@"Computer Architecture",@"Concepts, Techniques, and Models of Computer Programming",@"计算机程序的构造和解释",@"计算机程序设计艺术（第1卷）",@"算法导论",@"Computer Networking",@"The Computer Music Tutorial",@"Introduction to Algorithms",@"ACM图灵奖演讲集",@"Compilers",@"通灵芯片",@"算法设计与分析基础",@"现代操作系统",@"Computer Networking",@"ACM图灵奖", nil];
-        [self.view addSubview:tableView];
+    [self.view addSubview:tableView];
     tableView.delegate = self;
     tableView.dataSource = self;
     self.listbookmenu = bookmenu;
+//    NSLog(@"%@",bookmenu);
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
