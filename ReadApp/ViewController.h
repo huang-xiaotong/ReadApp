@@ -17,4 +17,6 @@
 @property (nonatomic, retain)NSArray *listbookPicture;
 @property (nonatomic, retain)NSArray *listbookName;
 @property (nonatomic, retain)NSArray *listbookAuthor;
+@property (nonatomic, retain)NSArray *listbookPrice;
+@property (nonatomic, retain)NSArray *listbookSummary;
 @end

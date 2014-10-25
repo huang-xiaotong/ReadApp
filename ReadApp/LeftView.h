@@ -12,6 +12,6 @@
 <UITableViewDelegate, UITableViewDataSource>
 {
 }
--(void) bookName:(UITableView *)tableView :(NSArray*)bookmenu;
+-(NSArray*)bookMenu;
 
 @end
