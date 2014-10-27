@@ -33,6 +33,8 @@
     //初始化成员变量
     listBookName = [[NSMutableArray alloc]init];
     listbookPrice = [[NSMutableArray alloc]init];
+    listBookSummary = [[NSMutableArray alloc]init];
+    listBookAuthor = [[NSMutableArray alloc]init];
     //遍历数组list里的内容
     for (int i = 0; i<[list count]; i++) {
         //按数组中的索引取出对应的字典
@@ -40,11 +42,22 @@
         //通过字典中的key取出对应value，并且强制转化为NSString类型
         NSString *bookName = (NSString *)[listdicBook objectForKey:@"title"];
         NSString *bookPrice = (NSString *)[listdicBook objectForKey:@"price"];
+        NSString *bookSummary = (NSString *)[listdicBook objectForKey:@"summary"];
+        NSString *bookAuthor = (NSString *)[listdicBook objectForKey:@"author"];
+//        NSDictionary *listdicBookAuthor =[listdicBook objectForKey:@"author"];
+//        NSLog(@"%@",listdicBookAuthor);
+//        for (int j = 0; j<[listBookAuthor count]; j++) {
+//            NSString *bookAuthor = (NSString *)[listdicBookAuthor objectForKey:@"j"];
+//            NSLog(@"%@",bookAuthor);
+//            [listBookAuthor addObject:bookAuthor];
+//        }
         //将获取的value值放到数组容器中
         [listBookName addObject:bookName];
         [listbookPrice addObject:bookPrice];
-        NSLog(@"%@",listbookPrice);
+        [listBookSummary addObject:bookSummary];
+        [listBookAuthor addObject:bookAuthor];
     }
+    NSLog(@"%@",listBookAuthor);
 }
 
 -(NSArray*)bookImage
@@ -52,18 +65,30 @@
     NSArray *bookimage = [[NSArray alloc]initWithObjects:@"深入理解计算机系统s.png", @"Structure and Interpretation of Computer Programs - 2nd Edition (MIT) 2S.png", @"Hackers and Painters 3S.png", @"计算机网络4S.png", @"Computer Systems5S.png", @"Computer Architecture6S.png", @"Concepts, Techniques, and Models of Computer Programming7S.png", @"计算机程序的构造和解释8S.png", @"计算机程序设计艺术（第1卷）9S.png", @"算法导论10S.png", @"Computer Networking11S.png", @"The Computer Music Tutorial12S.png", @"Introduction to Algorithms13S.png", @"ACM图灵奖演讲集14S.png", @"Compilers15S.png", @"通灵芯片16S.png", @"算法设计与分析基础17S.png", @"现代操作系统18S.png", @"Computer Networking19S.png", @"ACM图灵奖20S.png", nil];
     return bookimage;
 }
--(NSArray*)bookAuthor
+//-(NSArray*)bookAuthor
+//{
+//    NSArray *bookAuthor = [[NSArray alloc]initWithObjects:@"Randal E.Bryant \n David O'Hallaron", @"Harold Abelson \n Gerald Jay Sussman", @"Paul Graham",@"Andrew S. Tanenbaum",@"Randal E. Bryant \n David R. O'Hallaron", @"John L. Hennessy \n David A. Patterson",@"Peter Van Roy, Seif Haridi", @"Harold Abelson \n Gerald Jay Sussman \n Julie Sussman",@"[美] Donald E. Knuth", @"[美] Thomas H.Cormen \n Charles E.Leiserson \n Charles E.Leiserson \n Clifford Stein", @"James F. Kurose \n Keith W. Ross", @"Curtis Roads", @"Thomas H. Cormen \n Charles E. Leiserson \n Ronald L. Rivest \n Clifford Stein", @"阿申豪斯特", @"Alfred V. Aho \n Monica S. Lam \n Ravi Sethi \n Jeffrey D. Ullman", @"丹尼尔·希利斯", @"（美）莱维丁（Levitin/A.）/潘彦", @"Andrew S. Tanenbaum", @"James F. Kurose \n Keith W. Ross", @""
+//                           , nil];
+//    return bookAuthor;
+//}
+-(NSArray *)bookAuthor
 {
-    NSArray *bookAuthor = [[NSArray alloc]initWithObjects:@"Randal E.Bryant \n David O'Hallaron", @"Harold Abelson \n Gerald Jay Sussman", @"Paul Graham",@"Andrew S. Tanenbaum",@"Randal E. Bryant \n David R. O'Hallaron", @"John L. Hennessy \n David A. Patterson",@"Peter Van Roy, Seif Haridi", @"Harold Abelson \n Gerald Jay Sussman \n Julie Sussman",@"[美] Donald E. Knuth", @"[美] Thomas H.Cormen \n Charles E.Leiserson \n Charles E.Leiserson \n Clifford Stein", @"James F. Kurose \n Keith W. Ross", @"Curtis Roads", @"Thomas H. Cormen \n Charles E. Leiserson \n Ronald L. Rivest \n Clifford Stein", @"阿申豪斯特", @"Alfred V. Aho \n Monica S. Lam \n Ravi Sethi \n Jeffrey D. Ullman", @"丹尼尔·希利斯", @"（美）莱维丁（Levitin/A.）/潘彦", @"Andrew S. Tanenbaum", @"James F. Kurose \n Keith W. Ross", @""
-                           , nil];
-    return bookAuthor;
+    [self getdataBookName];
+    return listBookAuthor;
+}
+-(NSArray *)bookSummary
+{
+    [self getdataBookName];
+    return listBookSummary;
 }
 -(NSArray *)bookName
 {
+    [self getdataBookName];
     return listBookName;
 }
 -(NSArray *)bookPrice
 {
+    [self getdataBookName];
     return listbookPrice;
 }
 /*

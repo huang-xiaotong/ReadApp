@@ -27,7 +27,6 @@
 - (void)viewDidLoad
 {
     self.title = @"书单";
-//    self.view.backgroundColor = [UIColor orangeColor];
     m_tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     m_tableView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:m_tableView];
@@ -45,7 +44,7 @@
     self.listbookName = [centerView bookName];
     self.listbookAuthor = [centerView bookAuthor];
     self.listbookPrice = [centerView bookPrice];
-    NSLog(@"Price: %@",listbookPrice);
+    self.listbookSummary = [centerView bookSummary];
 }
 -(void)setupRightPicButton
 {
@@ -117,17 +116,18 @@
 }
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+//    if (cell == nil)
+//    {
+        UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         cell.backgroundColor = [UIColor lightTextColor];
-    }
+//    }
     [self imageViewANDBookName:[self.listbookPicture objectAtIndex:indexPath.row] :[self.listbookName objectAtIndex:indexPath.row] :cell.contentView];
     [self authorANDPrice:[self.listbookAuthor objectAtIndex:indexPath.row] :[self.listbookPrice objectAtIndex:indexPath.row] :cell.contentView];
     UILabel *labelsummary = [self creatLabel:CGRectMake(100, 80, 45, 20) :@"简介：" :14 :[UIColor blackColor]];
     [cell.contentView addSubview:labelsummary];
-    
+    UILabel *labelSummary = [self creatLabel:CGRectMake(145, 80, 160, 20) :[self.listbookSummary objectAtIndex:indexPath.row] :12 :[UIColor blackColor]];
+    [cell.contentView addSubview:labelSummary];
     return cell;
 }
 @end

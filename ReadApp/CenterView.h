@@ -12,9 +12,13 @@
 {
     NSMutableArray *listbookPrice;
     NSMutableArray *listBookName;
+    NSMutableArray *listBookAuthor;
+    NSMutableArray *listBookSummary;
 }
 -(NSMutableArray*)bookImage;
--(NSMutableArray*)bookAuthor;
+-(NSArray *)bookAuthor;
 -(NSArray *)bookPrice;
 -(NSArray *)bookName;
+-(NSArray *)bookSummary;
+
 @end
