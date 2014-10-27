@@ -63,6 +63,7 @@
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [listbookmenu objectAtIndex:row];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
+    cell.textLabel.textColor = [UIColor blueColor];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

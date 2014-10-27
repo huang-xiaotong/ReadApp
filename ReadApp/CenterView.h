@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface CenterView : UIView
--(NSArray*)bookImage;
--(NSArray *)bookName;
--(NSArray*)bookAuthor;
+{
+    NSMutableArray *listbookPrice;
+    NSMutableArray *listBookName;
+}
+-(NSMutableArray*)bookImage;
+-(NSMutableArray*)bookAuthor;
 -(NSArray *)bookPrice;
-
+-(NSArray *)bookName;
 @end

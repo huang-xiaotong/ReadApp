@@ -12,11 +12,12 @@
 <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *m_tableView;
-    UITableViewCell *m_cell;
+    ;
 }
 @property (nonatomic, retain)NSArray *listbookPicture;
 @property (nonatomic, retain)NSArray *listbookName;
 @property (nonatomic, retain)NSArray *listbookAuthor;
 @property (nonatomic, retain)NSArray *listbookPrice;
 @property (nonatomic, retain)NSArray *listbookSummary;
+//@property (nonatomic, retain)NSMutableArray *listArray;
 @end

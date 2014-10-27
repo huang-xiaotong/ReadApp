@@ -23,12 +23,13 @@
 @synthesize listbookAuthor;
 @synthesize listbookPrice;
 @synthesize listbookSummary;
+//@synthesize listArray;
 - (void)viewDidLoad
 {
     self.title = @"书单";
 //    self.view.backgroundColor = [UIColor orangeColor];
     m_tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
-    m_tableView.backgroundColor = [UIColor orangeColor];
+    m_tableView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:m_tableView];
     m_tableView.delegate = self;
     m_tableView.dataSource = self;
@@ -44,6 +45,7 @@
     self.listbookName = [centerView bookName];
     self.listbookAuthor = [centerView bookAuthor];
     self.listbookPrice = [centerView bookPrice];
+    NSLog(@"Price: %@",listbookPrice);
 }
 -(void)setupRightPicButton
 {
@@ -91,34 +93,41 @@
     imageView.image =[UIImage imageNamed:imageNamed];
     return imageView;
 }
+-(void)imageViewANDBookName:(NSString *)imageview :(NSString *)bookName :(id)view
+{
+    UIImageView *imageView = [self imageBookPicture:imageview];
+    [view addSubview:imageView];
+    UILabel *labelName = [self creatLabel:CGRectMake(100, 10, 200, 20) :bookName :14 :[UIColor blueColor]];
+    [view addSubview:labelName];
+}
+-(void)authorANDPrice:(NSString *)author :(NSString*)price :(id)view
+{
+    UILabel *labelAuthor = [self creatLabel:CGRectMake(100, 30, 45, 30) :@"作者：" :14 :[UIColor blackColor]];
+    [view addSubview:labelAuthor];
+    UILabel *labelAuthorName = [self creatLabel:CGRectMake(145, 30, 180, 30) :author :12 :[UIColor blackColor]];
+    labelAuthorName.numberOfLines = 0;
+    [view addSubview:labelAuthorName];
+    UILabel *labelprice = [self creatLabel:CGRectMake(100, 60, 45, 20) :@"价格：" :14 :[UIColor blackColor]];
+    [view addSubview:labelprice];
+    UILabel *labelPrice = [self creatLabel:CGRectMake(145, 60, 80, 20) :price :12 :[UIColor blackColor]];
+    [view addSubview:labelPrice];
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return listbookName.count;
 }
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    m_cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (m_cell == nil)
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil)
     {
-        m_cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        m_cell.backgroundColor = [UIColor lightTextColor];
-
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell.backgroundColor = [UIColor lightTextColor];
     }
-    UIImageView *imageView = [self imageBookPicture:[self.listbookPicture objectAtIndex:indexPath.row]];
-    [m_cell.contentView addSubview:imageView];
-    UILabel *labelName = [self creatLabel:CGRectMake(100, 10, 200, 20) :[self.listbookName objectAtIndex:indexPath.row] :14 :[UIColor blueColor]];
-    [m_cell.contentView addSubview:labelName];
-    UILabel *labelAuthor = [self creatLabel:CGRectMake(100, 30, 45, 30) :@"作者：" :14 :[UIColor blackColor]];
-    [m_cell.contentView addSubview:labelAuthor];
-    UILabel *labelAuthorName = [self creatLabel:CGRectMake(145, 30, 180, 30) :[self.listbookAuthor objectAtIndex:indexPath.row] :12 :[UIColor blackColor]];
-    labelAuthorName.numberOfLines = 0;
-    [m_cell.contentView addSubview:labelAuthorName];
-    UILabel *labelprice = [self creatLabel:CGRectMake(100, 60, 45, 20) :@"价格：" :14 :[UIColor blackColor]];
-    [m_cell.contentView addSubview:labelprice];
-    UILabel *labelPrice = [self creatLabel:CGRectMake(145, 60, 80, 20) :[self.listbookPrice objectAtIndex:indexPath.row] :12 :[UIColor blackColor]];
-    [m_cell.contentView addSubview:labelPrice];
-    UILabel *labelsummary = [self creatLabel:CGRectMake(100, 80, 45, 20) :@"简介" :14 :[UIColor blackColor]];
-    [m_cell.contentView addSubview:labelsummary];
+    [self imageViewANDBookName:[self.listbookPicture objectAtIndex:indexPath.row] :[self.listbookName objectAtIndex:indexPath.row] :cell.contentView];
+    [self authorANDPrice:[self.listbookAuthor objectAtIndex:indexPath.row] :[self.listbookPrice objectAtIndex:indexPath.row] :cell.contentView];
+    UILabel *labelsummary = [self creatLabel:CGRectMake(100, 80, 45, 20) :@"简介：" :14 :[UIColor blackColor]];
+    [cell.contentView addSubview:labelsummary];
     
-    return m_cell;
+    return cell;
 }
 @end
