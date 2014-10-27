@@ -14,11 +14,14 @@
     NSMutableArray *listBookName;
     NSMutableArray *listBookAuthor;
     NSMutableArray *listBookSummary;
+    NSMutableArray *listBookauthor;
+//    NSArray *bookAuthor;
 }
 -(NSMutableArray*)bookImage;
 -(NSArray *)bookAuthor;
 -(NSArray *)bookPrice;
 -(NSArray *)bookName;
 -(NSArray *)bookSummary;
+//@property (nonatomic,retain)NSMutableArray *listBookAuthor;
 
 @end

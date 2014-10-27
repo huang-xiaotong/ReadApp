@@ -12,7 +12,7 @@
 <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *m_tableView;
-    ;
+    NSMutableArray *Author;
 }
 @property (nonatomic, retain)NSArray *listbookPicture;
 @property (nonatomic, retain)NSArray *listbookName;
