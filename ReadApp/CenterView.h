@@ -15,9 +15,9 @@
     NSMutableArray *listBookAuthor;
     NSMutableArray *listBookSummary;
     NSMutableArray *listBookauthor;
-//    NSArray *bookAuthor;
+    NSMutableArray *listBookImage;
+    NSMutableArray *listBookimage;
 }
--(NSMutableArray*)bookImage;
 -(NSArray *)bookAuthor;
 -(NSArray *)bookPrice;
 -(NSArray *)bookName;

@@ -40,7 +40,7 @@
 -(void) CenterView
 {
     CenterView *centerView = [[CenterView alloc]init];
-    self.listbookPicture = [centerView bookImage];
+//    self.listbookPicture = [centerView bookImage];
     self.listbookName = [centerView bookName];
     self.listbookAuthor = [centerView bookAuthor];
     self.listbookPrice = [centerView bookPrice];
@@ -82,12 +82,13 @@
     label.font = [UIFont systemFontOfSize:fontsize];
     return label;
 }
--(UIImageView*)imageBookPicture:(NSString*)imageNamed
+-(UIImageView*)imageBookPicture:(NSString*)imageNamed 
 {
     UIImage *image = [[UIImage alloc] init];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.frame = CGRectMake(0, 0, 100, 100);
     imageView.image =[UIImage imageNamed:imageNamed];
+//    imageView.imageURL = [NSURL URLWithString:url];
     return imageView;
 }
 -(void)imageViewANDBookName:(NSString *)imageview :(NSString *)bookName :(id)view :(NSString *)price
