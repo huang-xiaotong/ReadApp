@@ -18,7 +18,7 @@
     return self;
 }
 
--(void)getdataBookName
+-(void)getdataBookInformation
 {
     NSError *error;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.douban.com/v2/book/search?tag=computer"]];
@@ -34,7 +34,7 @@
     listBookName = [[NSMutableArray alloc]init];
     listbookPrice = [[NSMutableArray alloc]init];
     listBookSummary = [[NSMutableArray alloc]init];
-    listBookAuthor = [[NSMutableArray alloc]init];
+    listBookArrayauthor = [[NSMutableArray alloc]init];
     listBookImage = [[NSMutableArray alloc]init];
     //遍历数组list里的内容
     for (int i = 0; i<[list count]; i++) {
@@ -50,45 +50,50 @@
         [listBookName addObject:bookName];
         [listbookPrice addObject:bookPrice];
         [listBookSummary addObject:bookSummary];
-        [listBookAuthor addObject:bookAuthor];
+        [listBookArrayauthor addObject:bookAuthor];
         [listBookImage addObject:bookImage];
     }
-    listBookimage =[[NSMutableArray alloc]init];
+    listBookArrayImageSmall =[[NSMutableArray alloc]init];
     for (int i = 0; i<[listBookImage count]; i++) {
         NSString *string = [listBookImage[i] objectForKey:@"small"];
-//        NSURL *url = [NSURL URLWithString:string];
-//        NSLog(@"%@",url);
-        [listBookimage addObject:string];
+        [listBookArrayImageSmall addObject:string];
     }
-    listBookauthor = [[NSMutableArray alloc]init];
-    for (int i = 0; i<[listBookAuthor count]; i++) {
-        NSString *string = [listBookAuthor[i] componentsJoinedByString:@","];
-        [listBookauthor addObject:string];
+    listBookAuthor = [[NSMutableArray alloc]init];
+    for (int i = 0; i<[listBookArrayauthor count]; i++) {
+        NSString *string = [listBookArrayauthor[i] componentsJoinedByString:@","];
+        [listBookAuthor addObject:string];
+    }
+    listBookImageSmall = [[NSMutableArray alloc]init];
+    for (int i = 0; i<[listBookArrayImageSmall count]; i++) {
+        NSURL * url = [NSURL URLWithString:listBookArrayImageSmall[i]];
+        NSData * data = [[NSData alloc]initWithContentsOfURL:url];
+        UIImage *image = [[UIImage alloc]initWithData:data];
+        [listBookImageSmall addObject:image];
     }
 }
-//-(NSArray*)bookImage
-//{
-//    NSArray *bookimage = [[NSArray alloc]initWithObjects:@"深入理解计算机系统s.png", @"Structure and Interpretation of Computer Programs - 2nd Edition (MIT) 2S.png", @"Hackers and Painters 3S.png", @"计算机网络4S.png", @"Computer Systems5S.png", @"Computer Architecture6S.png", @"Concepts, Techniques, and Models of Computer Programming7S.png", @"计算机程序的构造和解释8S.png", @"计算机程序设计艺术（第1卷）9S.png", @"算法导论10S.png", @"Computer Networking11S.png", @"The Computer Music Tutorial12S.png", @"Introduction to Algorithms13S.png", @"ACM图灵奖演讲集14S.png", @"Compilers15S.png", @"通灵芯片16S.png", @"算法设计与分析基础17S.png", @"现代操作系统18S.png", @"Computer Networking19S.png", @"ACM图灵奖20S.png", nil];
-//    return bookimage;
-//}
+-(NSArray*)bookImageSmall
+{
+    [self getdataBookInformation];
+    return listBookImageSmall;
+}
 -(NSArray *)bookAuthor
 {
-    [self getdataBookName];
-    return listBookauthor;
+    [self getdataBookInformation];
+    return listBookAuthor;
 }
 -(NSArray *)bookSummary
 {
-    [self getdataBookName];
+    [self getdataBookInformation];
     return listBookSummary;
 }
 -(NSArray *)bookName
 {
-    [self getdataBookName];
+    [self getdataBookInformation];
     return listBookName;
 }
 -(NSArray *)bookPrice
 {
-    [self getdataBookName];
+    [self getdataBookInformation];
     return listbookPrice;
 }
 /*

@@ -23,7 +23,6 @@
 @synthesize listbookAuthor;
 @synthesize listbookPrice;
 @synthesize listbookSummary;
-//@synthesize listArray;
 - (void)viewDidLoad
 {
     self.title = @"书单";
@@ -40,7 +39,7 @@
 -(void) CenterView
 {
     CenterView *centerView = [[CenterView alloc]init];
-//    self.listbookPicture = [centerView bookImage];
+    self.listbookPicture = [centerView bookImageSmall];
     self.listbookName = [centerView bookName];
     self.listbookAuthor = [centerView bookAuthor];
     self.listbookPrice = [centerView bookPrice];
@@ -82,16 +81,15 @@
     label.font = [UIFont systemFontOfSize:fontsize];
     return label;
 }
--(UIImageView*)imageBookPicture:(NSString*)imageNamed 
+-(UIImageView*)imageBookPicture:(id)imageName
 {
     UIImage *image = [[UIImage alloc] init];
     UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     imageView.frame = CGRectMake(0, 0, 100, 100);
-    imageView.image =[UIImage imageNamed:imageNamed];
-//    imageView.imageURL = [NSURL URLWithString:url];
+    imageView.image =imageName;
     return imageView;
 }
--(void)imageViewANDBookName:(NSString *)imageview :(NSString *)bookName :(id)view :(NSString *)price
+-(void)imageViewANDBookName:(id)imageview :(NSString *)bookName :(id)view :(NSString *)price
 {
     UIImageView *imageView = [self imageBookPicture:imageview];
     [view addSubview:imageView];
@@ -126,6 +124,6 @@
 //    }
     [self imageViewANDBookName:[self.listbookPicture objectAtIndex:indexPath.row] :[self.listbookName objectAtIndex:indexPath.row] :cell.contentView :[self.listbookPrice objectAtIndex:indexPath.row]];
     [self AuthorAndSummary:[self.listbookAuthor objectAtIndex:indexPath.row] :[self.listbookSummary objectAtIndex:indexPath.row] :cell.contentView];
-    return cell;
+        return cell;
 }
 @end
