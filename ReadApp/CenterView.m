@@ -17,7 +17,6 @@
     }
     return self;
 }
-
 -(void)getdataBookInformation
 {
     NSError *error;
@@ -53,22 +52,25 @@
         [listBookArrayauthor addObject:bookAuthor];
         [listBookImage addObject:bookImage];
     }
+    //获取SmallImage的数组 http
     listBookArrayImageSmall =[[NSMutableArray alloc]init];
     for (int i = 0; i<[listBookImage count]; i++) {
         NSString *string = [listBookImage[i] objectForKey:@"small"];
         [listBookArrayImageSmall addObject:string];
     }
-    listBookAuthor = [[NSMutableArray alloc]init];
-    for (int i = 0; i<[listBookArrayauthor count]; i++) {
-        NSString *string = [listBookArrayauthor[i] componentsJoinedByString:@","];
-        [listBookAuthor addObject:string];
-    }
+    //获取SmallImage的数组 图片
     listBookImageSmall = [[NSMutableArray alloc]init];
     for (int i = 0; i<[listBookArrayImageSmall count]; i++) {
         NSURL * url = [NSURL URLWithString:listBookArrayImageSmall[i]];
         NSData * data = [[NSData alloc]initWithContentsOfURL:url];
         UIImage *image = [[UIImage alloc]initWithData:data];
         [listBookImageSmall addObject:image];
+    }
+    //获取作者的数组
+    listBookAuthor = [[NSMutableArray alloc]init];
+    for (int i = 0; i<[listBookArrayauthor count]; i++) {
+        NSString *string = [listBookArrayauthor[i] componentsJoinedByString:@","];
+        [listBookAuthor addObject:string];
     }
 }
 -(NSArray*)bookImageSmall

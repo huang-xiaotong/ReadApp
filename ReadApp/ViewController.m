@@ -3,6 +3,8 @@
 //  ReadApp
 //   iOS学习之UINavigationController详解与使用(一)添加UIBarButtonItem
 //http://beyondvincent.com/blog/2013/11/03/120-customize-navigation-status-bar-ios-7/
+//http://blog.csdn.net/totogo2010/article/details/8016129
+//http://www.howzhi.com/group/iosDevelop/discuss/10134 collectionView
 //  Created by xyooyy on 14/10/20.
 //  Copyright (c) 2014年 黄晓彤. All rights reserved.
 //
@@ -11,8 +13,8 @@
 #import "LeftViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "MMDrawerBarButtonItem.h"
-#import "PictureViewController.h"
 #import "CenterView.h"
+#import "CollectionViewController.h"
 @interface ViewController ()
 
 @end
@@ -52,7 +54,7 @@
 }
 -(void)rightButtonPress
 {
-    PictureViewController *pictureCtrl = [[PictureViewController alloc]init];
+    CollectionViewController *pictureCtrl = [[CollectionViewController alloc]init];
     [self.navigationController pushViewController:pictureCtrl animated:YES];
 }
 - (void)setupLeftMenuButton
