@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "CenterView.h"
 @interface ViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *m_tableView;
+    CenterView *centerView;
 }
 @property (nonatomic, retain)NSArray *listbookPicture;
 @property (nonatomic, retain)NSArray *listbookName;

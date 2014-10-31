@@ -1,14 +1,14 @@
 //
-//  CollectionView.m
+//  EveryBook.m
 //  ReadApp
 //
-//  Created by xyooyy on 14/10/29.
+//  Created by xyooyy on 14/10/31.
 //  Copyright (c) 2014年 黄晓彤. All rights reserved.
 //
 
-#import "CollectionView.h"
+#import "EveryBook.h"
 
-@implementation CollectionView
+@implementation EveryBook
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -18,7 +18,14 @@
     }
     return self;
 }
-
+-(UIImageView *)creatImageView :(id)bookImage
+{
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(20, 10, 105, 145)];
+    UIImage *bookimage = [[UIImage alloc]init];
+    bookimage = bookImage;
+    imageView.image =bookimage;
+    return imageView;
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

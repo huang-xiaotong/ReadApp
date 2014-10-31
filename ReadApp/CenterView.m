@@ -17,87 +17,45 @@
     }
     return self;
 }
--(void)getdataBookInformation
+-(UILabel*)creatLabel:(CGRect)frame :(NSString*)labelText :(double)fontsize :(UIColor *)textcolor
 {
-    NSError *error;
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.douban.com/v2/book/search?tag=computer"]];
-    
-    //将请求的url数据放到NSData对象中
-    NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    //IOS5自带解析类NSJSONSerialization从response中解析出数据放到字典中
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
-    //获取数组list的内容
-    NSArray *list = [dic objectForKey:@"books"];
-    //初始化成员变量
-    listBookName = [[NSMutableArray alloc]init];
-    listbookPrice = [[NSMutableArray alloc]init];
-    listBookSummary = [[NSMutableArray alloc]init];
-    listBookArrayauthor = [[NSMutableArray alloc]init];
-    listBookImage = [[NSMutableArray alloc]init];
-    //遍历数组list里的内容
-    for (int i = 0; i<[list count]; i++) {
-        //按数组中的索引取出对应的字典
-        NSDictionary *listdicBook = [list objectAtIndex:i];
-        //通过字典中的key取出对应value，并且强制转化为NSString类型
-        NSString *bookName = (NSString *)[listdicBook objectForKey:@"title"];
-        NSString *bookPrice = (NSString *)[listdicBook objectForKey:@"price"];
-        NSString *bookSummary = (NSString *)[listdicBook objectForKey:@"summary"];
-        NSArray *bookAuthor = [listdicBook objectForKey:@"author"];
-        NSArray *bookImage = [listdicBook objectForKey:@"images"];
-        //将获取的value值放到数组容器中
-        [listBookName addObject:bookName];
-        [listbookPrice addObject:bookPrice];
-        [listBookSummary addObject:bookSummary];
-        [listBookArrayauthor addObject:bookAuthor];
-        [listBookImage addObject:bookImage];
-    }
-    //获取SmallImage的数组 http
-    listBookArrayImageSmall =[[NSMutableArray alloc]init];
-    for (int i = 0; i<[listBookImage count]; i++) {
-        NSString *string = [listBookImage[i] objectForKey:@"small"];
-        [listBookArrayImageSmall addObject:string];
-    }
-    //获取SmallImage的数组 图片
-    listBookImageSmall = [[NSMutableArray alloc]init];
-    for (int i = 0; i<[listBookArrayImageSmall count]; i++) {
-        NSURL * url = [NSURL URLWithString:listBookArrayImageSmall[i]];
-        NSData * data = [[NSData alloc]initWithContentsOfURL:url];
-        UIImage *image = [[UIImage alloc]initWithData:data];
-        [listBookImageSmall addObject:image];
-    }
-    //获取作者的数组
-    listBookAuthor = [[NSMutableArray alloc]init];
-    for (int i = 0; i<[listBookArrayauthor count]; i++) {
-        NSString *string = [listBookArrayauthor[i] componentsJoinedByString:@","];
-        [listBookAuthor addObject:string];
-    }
+    UILabel *label = [[UILabel alloc]initWithFrame:frame];
+    label.text = labelText;
+    label.textColor =textcolor;
+    label.font = [UIFont systemFontOfSize:fontsize];
+    return label;
 }
--(NSArray*)bookImageSmall
+-(UIImageView*)imageBookPicture:(id)imageName
 {
-    [self getdataBookInformation];
-    return listBookImageSmall;
+    UIImage *image = [[UIImage alloc] init];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    imageView.frame = CGRectMake(0, 0, 100, 100);
+    imageView.image =imageName;
+    return imageView;
 }
--(NSArray *)bookAuthor
+-(void)imageViewANDBookName:(id)imageview :(NSString *)bookName :(id)view :(NSString *)price
 {
-    [self getdataBookInformation];
-    return listBookAuthor;
+    UIImageView *imageView = [self imageBookPicture:imageview];
+    [view addSubview:imageView];
+    UILabel *labelName = [self creatLabel:CGRectMake(100, 10, 200, 20) :bookName :14 :[UIColor blueColor]];
+    [view addSubview:labelName];
+    UILabel *labelprice = [self creatLabel:CGRectMake(100, 60, 45, 20) :@"价格：" :14 :[UIColor blackColor]];
+    [view addSubview:labelprice];
+    UILabel *labelPrice = [self creatLabel:CGRectMake(145, 60, 80, 20) :price :12 :[UIColor blackColor]];
+    [view addSubview:labelPrice];
 }
--(NSArray *)bookSummary
+-(void)AuthorAndSummary:(NSString *)Authorname :(NSString *)Summary :(id)view
 {
-    [self getdataBookInformation];
-    return listBookSummary;
+    UILabel *labelAuthor = [self creatLabel:CGRectMake(100, 30, 45, 30) :@"作者：" :14 :[UIColor blackColor]];
+    [view addSubview:labelAuthor];
+    UILabel *labelAuthorName = [self creatLabel:CGRectMake(145, 30, 180, 30) :Authorname :12 :[UIColor blackColor]];
+    [view addSubview:labelAuthorName];
+    UILabel *labelsummary = [self creatLabel:CGRectMake(100, 80, 45, 20) :@"简介：" :14 :[UIColor blackColor]];
+    [view addSubview:labelsummary];
+    UILabel *labelSummary = [self creatLabel:CGRectMake(145, 80, 160, 20) :Summary :12 :[UIColor blackColor]];
+    [view addSubview:labelSummary];
 }
--(NSArray *)bookName
-{
-    [self getdataBookInformation];
-    return listBookName;
-}
--(NSArray *)bookPrice
-{
-    [self getdataBookInformation];
-    return listbookPrice;
-}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

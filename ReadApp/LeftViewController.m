@@ -8,7 +8,7 @@
 
 #import "LeftViewController.h"
 #import "UIViewController+MMDrawerController.h"
-#import "LeftView.h"
+#import "BookInformation.h"
 @interface LeftViewController ()
 
 @end
@@ -32,8 +32,8 @@
     [self.view addSubview:tableView];
     tableView.delegate = self;
     tableView.dataSource = self;
-    LeftView *leftView = [[LeftView alloc]init];
-    NSArray *bookmenu = [leftView bookMenu];
+    BookInformation *bookInformation = [[BookInformation alloc]init];
+    NSArray *bookmenu = [bookInformation bookName];
     self.listbookmenu = bookmenu;
     [super viewDidLoad];
     // Do any additional setup after loading the view.

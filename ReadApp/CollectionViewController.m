@@ -7,7 +7,8 @@
 //
 
 #import "CollectionViewController.h"
-#import "CenterView.h"
+//#import "CenterView.h"
+#import "BookInformation.h"
 @interface CollectionViewController ()
 
 @end
@@ -23,9 +24,9 @@
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
+    self.title = @"图片列表";
     UICollectionViewFlowLayout *fl = [[UICollectionViewFlowLayout alloc]init];
     fl.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     fl.minimumLineSpacing = 5;
@@ -35,9 +36,9 @@
     m_collectionView.delegate = self;
     m_collectionView.dataSource = self;
     [self.view addSubview:m_collectionView];
-    CenterView *centerView = [[CenterView alloc]init];
-    self.bookImage = [centerView bookImageSmall];
-    self.bookName = [centerView bookName];
+    BookInformation *bookInformation = [[BookInformation alloc]init];
+    self.bookImage = [bookInformation bookImageSmall];
+    self.bookName = [bookInformation bookName];
     listNameAndImage = [[NSMutableArray alloc]init];
     for(NSInteger index = 0;index<[bookImage count]; index++){
         UIImage *image = bookImage[index];
@@ -53,6 +54,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(UIImageView *)creatImageView :(id)bookimage :(UIView *)view
+{
+    UIImage *image = [[UIImage alloc]init];
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    imageView.frame = CGRectMake(0, 0, 96, 100);
+    imageView.image = bookimage;
+    imageView.backgroundColor = [UIColor redColor];
+    [view addSubview:imageView];
+    return imageView;
+}
+-(UILabel *)creatLabel :(id)bookname :(UIView *)view
+{
+    UILabel *booknamelabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, 96, 20)];
+    booknamelabel.text = bookname;
+    booknamelabel.font = [UIFont systemFontOfSize:12];
+    booknamelabel.textColor = [UIColor blackColor];
+    [view addSubview:booknamelabel];
+    return booknamelabel;
+}
 #pragma mark - Collection View Data Source
 -(NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
@@ -60,22 +80,17 @@
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.bookName.count;
-//    return 5;
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(96, 100);
+    return CGSizeMake(96, 120);
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
         static NSString *CellIdentifier = @"GradientCell";
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
-        cell.backgroundColor = [UIColor colorWithRed:((10 * indexPath.row) / 255.0) green:((20 * indexPath.row)/255.0) blue:((30 * indexPath.row)/255.0) alpha:1.0f];
-    UIImage *image = [[UIImage alloc]init];
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
-    imageView.frame = CGRectMake(0, 0, 96, 100);
-    imageView.image = [self.bookImage objectAtIndex:indexPath.row];
-    imageView.backgroundColor = [UIColor redColor];
-    [cell.contentView addSubview:imageView];
+    cell.backgroundColor = [UIColor brownColor];
+    [self creatImageView:[self.bookImage objectAtIndex:indexPath.row] :cell.contentView];
+    [self creatLabel:[self.bookName objectAtIndex:indexPath.row] :cell.contentView];
         return cell;
 };
 /*
@@ -88,5 +103,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end
