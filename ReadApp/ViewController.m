@@ -82,14 +82,14 @@
 }
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-//    if (cell == nil)
-//    {
-        UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d",indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.backgroundColor = [UIColor lightTextColor];
-        centerView = [[CenterView alloc]init];
-//    }
-//    centerView = [[CenterView alloc]init];
+    }
+    CenterView *centerView = [[CenterView alloc]init];
     [centerView imageViewANDBookName:[self.listbookPicture objectAtIndex:indexPath.row] :[self.listbookName objectAtIndex:indexPath.row] :cell.contentView :[self.listbookPrice objectAtIndex:indexPath.row]];
     [centerView AuthorAndSummary:[self.listbookAuthor objectAtIndex:indexPath.row] :[self.listbookSummary objectAtIndex:indexPath.row] :cell.contentView];
         return cell;

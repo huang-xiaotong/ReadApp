@@ -32,7 +32,6 @@
     fl.minimumLineSpacing = 5;
     m_collectionView = [[UICollectionView alloc]initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:fl];
     m_collectionView.backgroundColor = [UIColor orangeColor];
-    [m_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"GradientCell"];
     m_collectionView.delegate = self;
     m_collectionView.dataSource = self;
     [self.view addSubview:m_collectionView];
@@ -86,7 +85,8 @@
     return CGSizeMake(96, 120);
 }
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-        static NSString *CellIdentifier = @"GradientCell";
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d",indexPath.row];
+    [m_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CellIdentifier];
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor brownColor];
     [self creatImageView:[self.bookImage objectAtIndex:indexPath.row] :cell.contentView];
