@@ -14,6 +14,6 @@
     NSMutableArray *listNameAndImage;
     UICollectionView *m_collectionView;
 }
-@property (strong, nonatomic)NSArray *bookImage;// 数据源
-@property (nonatomic, retain)NSArray *bookName;
+@property (strong, nonatomic)NSMutableArray *bookImage;// 数据源
+@property (nonatomic, retain)NSMutableArray *bookName;
 @end

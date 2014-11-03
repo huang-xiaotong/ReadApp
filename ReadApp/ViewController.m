@@ -22,11 +22,6 @@
 @interface ViewController ()
 @end
 @implementation ViewController
-@synthesize listbookPicture;
-@synthesize listbookName;
-@synthesize listbookAuthor;
-@synthesize listbookPrice;
-@synthesize listbookSummary;
 - (void)viewDidLoad
 {
     self.title = @"书单";
@@ -43,11 +38,20 @@
 -(void) CenterView
 {
     BookInformation *bookInformation = [[BookInformation alloc]init];
-    self.listbookPicture = [bookInformation bookImageSmall];
-    self.listbookName = [bookInformation bookName];
-    self.listbookAuthor = [bookInformation bookAuthor];
-    self.listbookPrice = [bookInformation bookPrice];
-    self.listbookSummary = [bookInformation bookSummary];
+    book = [[NSArray alloc]initWithArray:[bookInformation bookinformation]];
+    listbookAuthor = [[NSMutableArray alloc]init];
+    listbookName = [[NSMutableArray alloc]init];
+    listbookPicture = [[NSMutableArray alloc]init];
+    listbookPrice = [[NSMutableArray alloc]init];
+    listbookSummary = [[NSMutableArray alloc]init];
+    for (int i = 0; i<[book count]; i++)
+    {
+    [listbookPicture addObject:[book[i] objectForKey:@"smallimage"]];
+    [listbookName addObject:[book[i] objectForKey:@"title"]];
+    [listbookAuthor addObject:[book[i] objectForKey:@"author"]];
+    [listbookPrice addObject:[book[i] objectForKey:@"price"]];
+    [listbookSummary addObject: [book[i] objectForKey:@"summary"]];
+    }
 }
 -(void)setupRightPicButton
 {
@@ -82,20 +86,21 @@
 }
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d",indexPath.row];
+    NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d",indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.backgroundColor = [UIColor lightTextColor];
     }
     CenterView *centerView = [[CenterView alloc]init];
-    [centerView imageViewANDBookName:[self.listbookPicture objectAtIndex:indexPath.row] :[self.listbookName objectAtIndex:indexPath.row] :cell.contentView :[self.listbookPrice objectAtIndex:indexPath.row]];
-    [centerView AuthorAndSummary:[self.listbookAuthor objectAtIndex:indexPath.row] :[self.listbookSummary objectAtIndex:indexPath.row] :cell.contentView];
+    [centerView imageViewANDBookName:[listbookPicture objectAtIndex:indexPath.row] :[listbookName objectAtIndex:indexPath.row] :cell.contentView :[listbookPrice objectAtIndex:indexPath.row]];
+    [centerView AuthorAndSummary:[listbookAuthor objectAtIndex:indexPath.row] :[listbookSummary objectAtIndex:indexPath.row] :cell.contentView];
         return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    EveryBookViewController *everybookController = [[EveryBookViewController alloc]init];
+    NSUInteger row = indexPath.row;
+    EveryBookViewController *everybookController = [[EveryBookViewController alloc]init:[listbookName objectAtIndex:row]];
     [self.navigationController pushViewController:everybookController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

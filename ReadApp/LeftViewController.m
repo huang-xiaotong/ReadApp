@@ -33,8 +33,13 @@
     tableView.delegate = self;
     tableView.dataSource = self;
     BookInformation *bookInformation = [[BookInformation alloc]init];
-    NSArray *bookmenu = [bookInformation bookName];
-    self.listbookmenu = bookmenu;
+    listbookmenu = [[NSMutableArray alloc]init];
+    for (int i = 0; i<[[bookInformation bookinformation] count]; i++) {
+        NSString *bookName = [[bookInformation bookinformation][i] objectForKey:@"title"];
+        [listbookmenu addObject:bookName];
+    }
+//    NSArray *bookmenu = [bookInformation bookName];
+//    self.listbookmenu = bookmenu;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -62,6 +67,7 @@
     }
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [listbookmenu objectAtIndex:row];
+//    cell.textLabel.text = [listbookName objectAtIndex:row];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
     cell.textLabel.textColor = [UIColor blueColor];
     return cell;

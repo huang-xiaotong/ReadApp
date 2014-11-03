@@ -15,11 +15,11 @@
 
 @implementation EveryBookViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init:(NSString *)bookName
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        name = bookName;
     }
     return self;
 }
@@ -28,22 +28,46 @@
 {
     m_tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     [self.view addSubview:m_tableView];
-    BookInformation *bookInformation = [[BookInformation alloc]init];
-    listBookImage = [[NSArray alloc]init];
-    listBookImage = [bookInformation bookImageMid];
-    EveryBook *everyBook = [[EveryBook alloc]init];
-    UIImageView *bookImage = [everyBook creatImageView:listBookImage[0]];
-    [m_tableView addSubview:bookImage];
+    [self getbookarray];
+    [self show:[listBookName count] :name :m_tableView];
+//    EveryBook *everyBook = [[EveryBook alloc]init];
+//    UIImageView *bookImage = [everyBook creatImageView:listBookImage[0]];
+//    [m_tableView addSubview:bookImage];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
+-(void)getbookarray
+{
+    BookInformation *bookInformation = [[BookInformation alloc]init];
+    book = [[NSArray alloc]initWithArray:[bookInformation bookinformation]];
+    listBookName = [[NSMutableArray alloc]init];
+    listBookImage = [[NSMutableArray alloc]init];
+    for (int i = 0; i<[book count]; i++)
+    {
+        [listBookImage addObject:[book[i] objectForKey:@"Midimage"]];
+        [listBookName addObject:[book[i] objectForKey:@"title"]];
+        }
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)show :(int)n :(NSString *)str :(UIView *)view
+{
+    for (int i = 0; i<n; i++) {
+        NSLog(@"listname:%@",listBookName[i]);
+        NSLog(@"str:%@",str);
+        if (listBookName[i] == str)
+            
+        {
+            NSLog(@"%d",i);
+            EveryBook *everyBook = [[EveryBook alloc]init];
+            UIImageView *bookImage = [everyBook creatImageView:listBookImage[i]];
+            [view addSubview:bookImage];
+        }
+    }
+}
 /*
 #pragma mark - Navigation
 

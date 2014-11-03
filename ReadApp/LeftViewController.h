@@ -11,6 +11,7 @@
 @interface LeftViewController : UIViewController
 <UITableViewDataSource,UITableViewDelegate>
 {
+    NSMutableArray *listbookName;
 }
-@property(nonatomic,retain)NSArray *listbookmenu;
+@property(nonatomic,retain)NSMutableArray *listbookmenu;
 @end

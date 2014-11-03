@@ -35,9 +35,13 @@
     m_collectionView.delegate = self;
     m_collectionView.dataSource = self;
     [self.view addSubview:m_collectionView];
+    bookName = [[NSMutableArray alloc]init];
+    bookImage = [[NSMutableArray alloc]init];
     BookInformation *bookInformation = [[BookInformation alloc]init];
-    self.bookImage = [bookInformation bookImageSmall];
-    self.bookName = [bookInformation bookName];
+    for (int i = 0; i<[[bookInformation bookinformation] count]; i++) {
+        [self.bookName addObject:[[bookInformation bookinformation][i] objectForKey:@"title"]];
+        [self.bookImage addObject:[[bookInformation bookinformation][i] objectForKey:@"smallimage"]];
+    }
     listNameAndImage = [[NSMutableArray alloc]init];
     for(NSInteger index = 0;index<[bookImage count]; index++){
         UIImage *image = bookImage[index];

@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 @interface EveryBookViewController : UIViewController
 {
-    NSArray *listBookImage;
+    NSMutableArray *listBookImage;
     UITableView *m_tableView;
+    NSString *bookname;
+    NSMutableArray *listBookName;
+    NSString *name;
+    NSArray *book;
 }
+- (id)init:(NSString *)bookName;
 @end

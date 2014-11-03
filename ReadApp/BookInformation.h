@@ -10,21 +10,11 @@
 
 @interface BookInformation : NSObject
 {
-    NSMutableArray *listbookPrice;
-    NSMutableArray *listBookName;
-    NSMutableArray *listBookAuthor;
-    NSMutableArray *listBookSummary;
-    NSMutableArray *listBookArrayauthor;
-    NSMutableArray *listBookImage;
-    NSMutableArray *listBookArrayImageSmall;
-    NSMutableArray *listBookImageSmall;
-    NSMutableArray *listBookImageMid;
-    NSMutableArray *listBookArrayImageMid;
+    NSMutableDictionary *listBookInformation;
+    NSMutableArray *listArrayBook;
 }
--(NSArray *)bookImageMid;
--(NSArray *)bookAuthor;
--(NSArray *)bookPrice;
--(NSArray *)bookName;
--(NSArray *)bookSummary;
--(NSArray *)bookImageSmall;
+-(NSMutableArray *)bookinformation;
+@property (nonatomic, retain)NSString *path;
+@property (nonatomic, retain)NSArray *book;
+@property (nonatomic, retain)NSMutableArray *listArrayBook;
 @end
