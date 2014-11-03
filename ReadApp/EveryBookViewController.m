@@ -26,13 +26,11 @@
 
 - (void)viewDidLoad
 {
+//    self.view.backgroundColor = [UIColor whiteColor];
     m_tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
     [self.view addSubview:m_tableView];
     [self getbookarray];
-    [self show:[listBookName count] :name :m_tableView];
-//    EveryBook *everyBook = [[EveryBook alloc]init];
-//    UIImageView *bookImage = [everyBook creatImageView:listBookImage[0]];
-//    [m_tableView addSubview:bookImage];
+    [self show:m_tableView];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -53,20 +51,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)show :(int)n :(NSString *)str :(UIView *)view
+-(void)show :(UIView *)view
 {
-    for (int i = 0; i<n; i++) {
-        NSLog(@"listname:%@",listBookName[i]);
-        NSLog(@"str:%@",str);
-        if (listBookName[i] == str)
-            
-        {
-            NSLog(@"%d",i);
-            EveryBook *everyBook = [[EveryBook alloc]init];
-            UIImageView *bookImage = [everyBook creatImageView:listBookImage[i]];
-            [view addSubview:bookImage];
-        }
-    }
+    int i = (unsigned long)[listBookName indexOfObject:name];
+    EveryBook *everyBook = [[EveryBook alloc]init];
+    UIImageView *bookImage = [everyBook creatImageView:listBookImage[i]];
+    [view addSubview:bookImage];
 }
 /*
 #pragma mark - Navigation
