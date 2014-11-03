@@ -101,6 +101,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = indexPath.row;
     EveryBookViewController *everybookController = [[EveryBookViewController alloc]init:[listbookName objectAtIndex:row]];
+    NSLog(@"%@",[listbookName objectAtIndex:row]);
     [self.navigationController pushViewController:everybookController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     

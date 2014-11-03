@@ -11,5 +11,5 @@
 @interface CenterView : UIView
 -(void)imageViewANDBookName:(id)imageview :(NSString *)bookName :(id)view :(NSString *)price;
 -(void)AuthorAndSummary:(NSString *)Authorname :(NSString *)Summary :(id)view;
-
+-(UILabel*)creatLabel:(CGRect)frame :(NSString*)labelText :(double)fontsize :(UIColor *)textcolor;
 @end

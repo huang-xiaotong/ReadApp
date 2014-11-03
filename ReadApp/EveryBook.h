@@ -11,5 +11,6 @@
 @interface EveryBook : UIView
 
 -(UIImageView *)creatImageView :(id)bookImage;
-
+-(void)creatlabel:(NSString *)bookname :(UIView *)view :(CGRect)frame :(NSString*)tit :(CGRect)frametitlelabel;
+-(UILabel*)creatLabel:(CGRect)frame :(NSString*)labelText :(double)fontsize :(UIColor *)textcolor;
 @end

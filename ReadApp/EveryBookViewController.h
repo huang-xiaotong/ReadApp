@@ -10,13 +10,17 @@
 #import <Foundation/Foundation.h>
 
 @interface EveryBookViewController : UIViewController
+<UITableViewDataSource, UITableViewDelegate>
 {
-    NSMutableArray *listBookImage;
+//    NSMutableArray *listBookImage;
     UITableView *m_tableView;
     NSString *bookname;
     NSMutableArray *listBookName;
     NSString *name;
     NSArray *book;
+//    NSMutableArray *listBookAuthor;
+//    NSMutableArray *listBookPrice;
+//    NSMutableArray *listBookSummary;
 }
 - (id)init:(NSString *)bookName;
 @end
