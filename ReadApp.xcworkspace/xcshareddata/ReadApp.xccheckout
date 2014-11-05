@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E058BCC6-88E3-40E9-B7F7-FF83FCCCF26A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ReadApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>23CC7C15-1FB0-41C1-8A2E-D860C4C7283F</key>
+		<string>https://github.com/huangxiaotong02/ReadApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ReadApp.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>23CC7C15-1FB0-41C1-8A2E-D860C4C7283F</key>
+		<string>..</string>
+		<key>BDA30246-4633-48CD-9603-EB843C531A81</key>
+		<string>../ReadApp</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/huangxiaotong02/ReadApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>23CC7C15-1FB0-41C1-8A2E-D860C4C7283F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>23CC7C15-1FB0-41C1-8A2E-D860C4C7283F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ReadApp</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BDA30246-4633-48CD-9603-EB843C531A81</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ReadApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

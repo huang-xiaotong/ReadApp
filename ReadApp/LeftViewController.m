@@ -9,6 +9,7 @@
 #import "LeftViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "BookInformation.h"
+#import "EveryBookViewController.h"
 @interface LeftViewController ()
 
 @end
@@ -27,7 +28,6 @@
 - (void)viewDidLoad
 {
     self.title = @"书单";
-    self.view.backgroundColor = [UIColor whiteColor];
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     [self.view addSubview:tableView];
     tableView.delegate = self;
@@ -38,8 +38,6 @@
         NSString *bookName = [[bookInformation bookinformation][i] objectForKey:@"title"];
         [listbookmenu addObject:bookName];
     }
-//    NSArray *bookmenu = [bookInformation bookName];
-//    self.listbookmenu = bookmenu;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -65,9 +63,9 @@
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    cell.contentView.backgroundColor =[UIColor colorWithRed:78.0/255.0 green:156.0/255.0 blue:100.0/255.0 alpha:1.0];
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [listbookmenu objectAtIndex:row];
-//    cell.textLabel.text = [listbookName objectAtIndex:row];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
     cell.textLabel.textColor = [UIColor blueColor];
     return cell;
