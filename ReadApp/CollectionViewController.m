@@ -7,7 +7,7 @@
 //
 
 #import "CollectionViewController.h"
-//#import "CenterView.h"
+#import "EveryBookViewController.h"
 #import "BookInformation.h"
 @interface CollectionViewController ()
 
@@ -30,7 +30,7 @@
     UICollectionViewFlowLayout *fl = [[UICollectionViewFlowLayout alloc]init];
     fl.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     fl.minimumLineSpacing = 5;
-    m_collectionView = [[UICollectionView alloc]initWithFrame:[UIScreen mainScreen].bounds collectionViewLayout:fl];
+    m_collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 60, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) collectionViewLayout:fl];
     m_collectionView.backgroundColor = [UIColor orangeColor];
     m_collectionView.delegate = self;
     m_collectionView.dataSource = self;
@@ -97,6 +97,13 @@
     [self creatLabel:[self.bookName objectAtIndex:indexPath.row] :cell.contentView];
         return cell;
 };
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSUInteger row = indexPath.row;
+    EveryBookViewController *everybookController = [[EveryBookViewController alloc]init:[self.bookName objectAtIndex:row]];
+    [self.navigationController pushViewController:everybookController animated:YES];
+//    [collectionView deselectRowAtIndexPath:indexPath animated:YES];
+    
+}
 /*
 #pragma mark - Navigation
 

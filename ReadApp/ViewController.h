@@ -17,6 +17,7 @@
     NSMutableArray *listbookAuthor;
     NSMutableArray *listbookPrice;
     NSMutableArray *listbookSummary;
-
+    
 }
+@property int n;
 @end

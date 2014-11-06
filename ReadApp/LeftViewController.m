@@ -63,7 +63,7 @@
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.contentView.backgroundColor =[UIColor colorWithRed:78.0/255.0 green:156.0/255.0 blue:100.0/255.0 alpha:1.0];
+    cell.contentView.backgroundColor =[UIColor colorWithRed:78.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0];
     NSUInteger row = [indexPath row];
     cell.textLabel.text = [listbookmenu objectAtIndex:row];
     cell.textLabel.font = [UIFont boldSystemFontOfSize:12];

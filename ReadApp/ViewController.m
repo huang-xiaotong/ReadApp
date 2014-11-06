@@ -22,9 +22,12 @@
 @interface ViewController ()
 @end
 @implementation ViewController
+@synthesize n;
 - (void)viewDidLoad
 {
+    n = 0;
     self.title = @"书单";
+    self.view.frame = [UIScreen mainScreen].bounds;
     m_tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
     m_tableView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:m_tableView];
@@ -61,7 +64,21 @@
 -(void)rightButtonPress
 {
     CollectionViewController *pictureCtrl = [[CollectionViewController alloc]init];
-    [self.navigationController pushViewController:pictureCtrl animated:YES];
+    if(n == 0)
+    {
+        [self addChildViewController:pictureCtrl];
+        UIView *view = [[UIView alloc]initWithFrame:pictureCtrl.view.frame];
+        view = pictureCtrl.view;
+        [m_tableView removeFromSuperview];
+        [self.view addSubview:view];
+        n = 1;
+    }
+else if (n == 1)
+{
+    [pictureCtrl removeFromParentViewController];
+    [self.view addSubview:m_tableView];
+    n = 0;
+}
 }
 - (void)setupLeftMenuButton
 {
