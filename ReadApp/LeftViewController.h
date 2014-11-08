@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ViewController.h"
+#import "testViewController.h"
 @interface LeftViewController : UIViewController
 <UITableViewDataSource,UITableViewDelegate>
 {
     NSMutableArray *listbookName;
+    ViewController *viewCtrl;
+    testViewController *testCtrl;
 }
 @property(nonatomic,retain)NSMutableArray *listbookmenu;
+- (id)init :(UINavigationController *)viewControl :(testViewController *)testControl;
 @end

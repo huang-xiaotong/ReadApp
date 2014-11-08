@@ -9,52 +9,43 @@
 #import "LeftViewController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "BookInformation.h"
-#import "EveryBookViewController.h"
+#import "CollectionViewController.h"
 @interface LeftViewController ()
 
 @end
 
 @implementation LeftViewController
 @synthesize listbookmenu;
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init :(ViewController *)viewControl :(testViewController *)testControl
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
-        // Custom initialization
+        viewCtrl = viewControl;
+        testCtrl = testControl;
     }
     return self;
 }
-
 - (void)viewDidLoad
 {
-    self.title = @"书单";
+    self.title = @"分类";
     UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     [self.view addSubview:tableView];
     tableView.delegate = self;
     tableView.dataSource = self;
-    BookInformation *bookInformation = [[BookInformation alloc]init];
-    listbookmenu = [[NSMutableArray alloc]init];
-    for (int i = 0; i<[[bookInformation bookinformation] count]; i++) {
-        NSString *bookName = [[bookInformation bookinformation][i] objectForKey:@"title"];
-        [listbookmenu addObject:bookName];
-    }
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.listbookmenu count];
+    return 12;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    
-    return @"BOOKNAME";
-    
+    return @"分类";
 }
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -64,16 +55,29 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
     cell.contentView.backgroundColor =[UIColor colorWithRed:78.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0];
-    NSUInteger row = [indexPath row];
-    cell.textLabel.text = [listbookmenu objectAtIndex:row];
-    cell.textLabel.font = [UIFont boldSystemFontOfSize:12];
-    cell.textLabel.textColor = [UIColor blueColor];
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"书单";
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:16];
+        cell.textLabel.textColor = [UIColor blueColor];
+    }
+    else if (indexPath.row == 1)
+    {
+        cell.textLabel.text = @"test";
+        cell.textLabel.font = [UIFont boldSystemFontOfSize:16];
+        cell.textLabel.textColor = [UIColor blueColor];
+    }
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0) {
+        [self.mm_drawerController setCenterViewController:viewCtrl withFullCloseAnimation:NO completion:nil];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
+    else {
+        [self.mm_drawerController setCenterViewController:testCtrl withFullCloseAnimation:NO completion:nil];
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 /*
 #pragma mark - Navigation

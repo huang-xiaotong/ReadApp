@@ -10,7 +10,7 @@
 #import <MMDrawerController.h>
 #import "LeftViewController.h"
 #import "ViewController.h"
-
+#import "testViewController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,18 +18,18 @@
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    ViewController *centerviewCtrl = [[ViewController alloc]init];
-    UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:centerviewCtrl];
+    ViewController *viewCtrl = [[ViewController alloc]init];
+    UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:viewCtrl];
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:78.0/255.0 green:156.0/255.0 blue:156.0/255.0 alpha:1.0]];
-    LeftViewController *leftCtrl = [[LeftViewController alloc]init];
+    testViewController *testCtrl = [[testViewController alloc]init];
+    LeftViewController *leftCtrl = [[LeftViewController alloc]init :navigation :testCtrl];
     MMDrawerController *drawerctrl = [[MMDrawerController alloc]initWithCenterViewController:navigation leftDrawerViewController:leftCtrl];
-    [drawerctrl setMaximumLeftDrawerWidth:280];
+    [drawerctrl setMaximumLeftDrawerWidth:100];
     [drawerctrl setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
     [drawerctrl setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
     self.window.rootViewController = drawerctrl;
     return YES;
 }
-							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -56,5 +56,6 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

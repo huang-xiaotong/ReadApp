@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		776D04F1727E9E2F7C1A6D68 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF276663F9ACFE428BF4476 /* libPods.a */; };
+		9A27FD9E1A0C5FC200683A1A /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A27FD9D1A0C5FC200683A1A /* testViewController.m */; };
 		9A588A491A00972F00049A10 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A588A481A00972F00049A10 /* CollectionViewController.m */; };
 		9A6D47E51A033605007E7FBC /* EveryBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D47E41A033605007E7FBC /* EveryBookViewController.m */; };
 		9A6D47E91A03387F007E7FBC /* BookInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D47E81A03387F007E7FBC /* BookInformation.m */; };
@@ -46,6 +47,8 @@
 /* Begin PBXFileReference section */
 		04A9F88C3AF10015806EA0E7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		985989BC1DB5456418470B24 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9A27FD9C1A0C5FC200683A1A /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		9A27FD9D1A0C5FC200683A1A /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		9A588A471A00972F00049A10 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		9A588A481A00972F00049A10 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		9A6D47E31A033605007E7FBC /* EveryBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryBookViewController.h; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 				9A588A481A00972F00049A10 /* CollectionViewController.m */,
 				9A6D47E31A033605007E7FBC /* EveryBookViewController.h */,
 				9A6D47E41A033605007E7FBC /* EveryBookViewController.m */,
+				9A27FD9C1A0C5FC200683A1A /* testViewController.h */,
+				9A27FD9D1A0C5FC200683A1A /* testViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -386,6 +391,7 @@
 				9A6D47E91A03387F007E7FBC /* BookInformation.m in Sources */,
 				9AB6498B19F74F100071B60C /* LeftViewController.m in Sources */,
 				9A6E133119F4FA0B006C9E50 /* AppDelegate.m in Sources */,
+				9A27FD9E1A0C5FC200683A1A /* testViewController.m in Sources */,
 				9A6E132D19F4FA0B006C9E50 /* main.m in Sources */,
 				9A6D47E51A033605007E7FBC /* EveryBookViewController.m in Sources */,
 				9A890BA319FBA4EA00AAFA1D /* CenterView.m in Sources */,

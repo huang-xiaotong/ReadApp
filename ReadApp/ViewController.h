@@ -19,5 +19,8 @@
     NSMutableArray *listbookSummary;
     
 }
-@property int n;
+@property int flag;
+@property (nonatomic, retain)UITableView *m_tableView;
+-(void)rightButtonPress;
+//-(id)init :(UIViewController *)center;
 @end

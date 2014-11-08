@@ -7,6 +7,7 @@
 //http://www.howzhi.com/group/iosDevelop/discuss/10134 collectionView
 //http://rainbownight.blog.51cto.com/1336585/1323780
 //http://www.bkjia.com/IOSjc/883000.html
+//https://github.com/mutualmobile/MMDrawerController/blob/master/KitchenSink/ExampleFiles/MMAppDelegate.m
 //  Created by xyooyy on 14/10/20.
 //  Copyright (c) 2014年 黄晓彤. All rights reserved.
 //
@@ -19,16 +20,18 @@
 #import "BookInformation.h"
 #import "CollectionViewController.h"
 #import "EveryBookViewController.h"
+#import "testViewController.h"
 @interface ViewController ()
 @end
 @implementation ViewController
-@synthesize n;
+@synthesize flag;
+@synthesize m_tableView;
 - (void)viewDidLoad
 {
-    n = 0;
+    flag = 0;
     self.title = @"书单";
-    self.view.frame = [UIScreen mainScreen].bounds;
-    m_tableView = [[UITableView alloc]initWithFrame:self.view.bounds];
+    self.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    m_tableView = [[UITableView alloc]initWithFrame:self.view.frame];
     m_tableView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:m_tableView];
     m_tableView.delegate = self;
@@ -64,20 +67,20 @@
 -(void)rightButtonPress
 {
     CollectionViewController *pictureCtrl = [[CollectionViewController alloc]init];
-    if(n == 0)
+    if(flag == 0)
     {
         [self addChildViewController:pictureCtrl];
         UIView *view = [[UIView alloc]initWithFrame:pictureCtrl.view.frame];
         view = pictureCtrl.view;
         [m_tableView removeFromSuperview];
         [self.view addSubview:view];
-        n = 1;
+        flag = 1;
     }
-else if (n == 1)
+else if (flag == 1)
 {
     [pictureCtrl removeFromParentViewController];
     [self.view addSubview:m_tableView];
-    n = 0;
+    flag = 0;
 }
 }
 - (void)setupLeftMenuButton
