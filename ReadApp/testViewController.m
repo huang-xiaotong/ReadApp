@@ -40,6 +40,12 @@
     m_tableView.delegate = self;
     m_tableView.dataSource = self;
     [self setupLeftMenuButton];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.backgroundColor = [UIColor whiteColor];
+    button.frame =CGRectMake(10, 30, 40, 20);
+    [button setTitle:@"返回" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(press:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -52,7 +58,10 @@
 {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
-
+-(void)press: (id)sender
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
