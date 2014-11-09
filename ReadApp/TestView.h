@@ -9,7 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TestView : UIView
--(UIButton *)creatbutton :(id)color :(CGRect)buttonframe :(NSString *)title;
--(UILabel *)creatlabel :(id)color :(CGRect)frame :(NSString *)title :(id)textcolor :(UIView*)view;
-
+-(void)show :(id)target action:(SEL)press labelview:(UIView *)labelview buttonview:(UIView *)buttonview;
 @end

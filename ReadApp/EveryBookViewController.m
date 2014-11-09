@@ -49,14 +49,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
--(void)show :(UIView *)view
-{
-   int i = (unsigned long)[listBookName indexOfObject:name];
-    EveryBook *everyBook = [[EveryBook alloc]init];
-    UIImageView *bookImage = [everyBook creatImageView:[book[i] objectForKey:@"Midimage"]];
-    [view addSubview:bookImage];
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -66,25 +58,6 @@
         return 50.0f;
     return 290.0f;
 }
--(void)onerow:(UITableViewCell*)onecell
-{
-    onecell.backgroundColor =  [UIColor colorWithRed:200/255.0 green:240/255.0 blue:180/255.0 alpha:1];
-    [self show:onecell.contentView];
-    EveryBook *every = [[EveryBook alloc]init];
-    int i = (unsigned long)[listBookName indexOfObject:name];
-    [every creatlabel:[book[i] objectForKey:@"title"] :onecell.contentView :CGRectMake(120, 10, 70, 50) :@"标题:" :(CGRectMake(170, 10, 120, 50))];
-    [every creatlabel:[book[i] objectForKey:@"author"] :onecell.contentView :CGRectMake(120, 60, 70, 50) :@"作者:" :CGRectMake(170, 60, 120, 50)];
-    [every creatlabel:[book[i] objectForKey:@"price"] :onecell.contentView :CGRectMake(120, 110, 70, 50) :@"价格:" :CGRectMake(170, 110, 120, 50)];
-
-}
--(void)secondrow:(UITableViewCell*)secondcell
-{
-    int i = (unsigned long)[listBookName indexOfObject:name];
-    EveryBook *everyBook = [[EveryBook alloc]init];
-    UILabel *summary = [everyBook creatLabel:CGRectMake(10, 10, 300, 280) :[book[i] objectForKey:@"summary"] :16 :[UIColor blackColor]];
-    summary.numberOfLines = 0;
-    [secondcell.contentView addSubview:summary];
-}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 3;
 }
@@ -92,18 +65,21 @@
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d",indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
+    int i = (unsigned long)[listBookName indexOfObject:name];
+    EveryBook *everybook = [[EveryBook alloc]init];
     if (indexPath.row == 0) 
-        [self onerow:cell];
+        [everybook theUpperData:cell titlelabel:[book[i] objectForKey:@"title"] authorlabel:[book[i] objectForKey:@"author"] pricelabel:[book[i] objectForKey:@"price"] image:[book[i] objectForKey:@"Midimage"]];
     if (indexPath.row == 1) {
         cell.backgroundColor = [UIColor grayColor];
         cell.textLabel.text = @"简介:";
     }
     if (indexPath.row == 2)
-        [self secondrow:cell];
+        [everybook theLowerHalf:cell summarylabel:[book[i] objectForKey:@"summary"]];
     return cell;
 }
 /*

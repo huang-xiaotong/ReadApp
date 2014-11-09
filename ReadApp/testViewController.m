@@ -24,45 +24,20 @@
     }
     return self;
 }
-//-(id)init :(UIViewController *)center
-//{
-//    self = [super init];
-//    if (self) {
-//        center = self;
-//    }
-//    return  self;
-//}
 - (void)viewDidLoad
 {
     self.title = @"test";
-    m_tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 40, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    m_tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     m_tableView.backgroundColor = [UIColor colorWithRed:178.0/255.0 green:156.0/255.0 blue:56.0/255.0 alpha:1.0];
     [self.view addSubview:m_tableView];
-    [self setupLeftMenuButton];
     m_tableView.delegate = self;
     m_tableView.dataSource = self;
-    [self show];
+    TestView *testview = [[TestView alloc]init];
+    [testview show:self action:@selector(press:) labelview:self.view buttonview:self.view];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
--(void)show
-{
-    TestView *testView = [[TestView alloc]init];
-    [testView creatlabel:[UIColor colorWithRed:78.0/255.0 green:156.0/255.0 blue:156.0/255.0 alpha:1.0] :CGRectMake(0, 0, 320, 40) :@"test" :[UIColor blueColor] :self.view];
-    UIButton *returnbutton = [testView creatbutton:[UIColor whiteColor] :CGRectMake(10, 20, 50, 20) :@"返回" ];
-    [returnbutton addTarget:self action:@selector(press:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:returnbutton];
-}
 -(void)press: (id)sender
-{
-    [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
-}
-- (void)setupLeftMenuButton
-{
-    MMDrawerBarButtonItem * leftDrawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(leftDrawerButtonPress)];
-    [self.navigationItem setLeftBarButtonItem:leftDrawerButton animated:YES];
-}
-- (void)leftDrawerButtonPress
 {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }

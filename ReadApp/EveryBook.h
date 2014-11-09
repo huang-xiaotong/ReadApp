@@ -9,8 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface EveryBook : UIView
+-(void)theUpperData:(UITableViewCell*)onecell titlelabel:(NSString *)bookname authorlabel:(NSString *)bookauthor pricelabel:(NSString *)bookprice image:(UIImage *)bookimage;
+-(void)theLowerHalf:(UITableViewCell*)secondcell summarylabel:(NSString *)booksummary;
 
--(UIImageView *)creatImageView :(id)bookImage;
--(void)creatlabel:(NSString *)bookname :(UIView *)view :(CGRect)frame :(NSString*)tit :(CGRect)frametitlelabel;
--(UILabel*)creatLabel:(CGRect)frame :(NSString*)labelText :(double)fontsize :(UIColor *)textcolor;
 @end
