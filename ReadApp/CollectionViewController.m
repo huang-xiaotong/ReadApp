@@ -35,6 +35,12 @@
     m_collectionView.delegate = self;
     m_collectionView.dataSource = self;
     [self.view addSubview:m_collectionView];
+    [self getdata];
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+-(void)getdata
+{
     bookName = [[NSMutableArray alloc]init];
     bookImage = [[NSMutableArray alloc]init];
     BookInformation *bookInformation = [[BookInformation alloc]init];
@@ -42,15 +48,6 @@
         [self.bookName addObject:[[bookInformation bookinformation][i] objectForKey:@"title"]];
         [self.bookImage addObject:[[bookInformation bookinformation][i] objectForKey:@"smallimage"]];
     }
-    listNameAndImage = [[NSMutableArray alloc]init];
-    for(NSInteger index = 0;index<[bookImage count]; index++){
-        UIImage *image = bookImage[index];
-        NSString *title = bookName[index];
-        NSArray *bookNameAndImage = [[NSArray alloc]initWithObjects:image,title, nil];
-        [listNameAndImage addObject:bookNameAndImage];
-    }
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 - (void)didReceiveMemoryWarning
 {
@@ -100,9 +97,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = indexPath.row;
     EveryBookViewController *everybookController = [[EveryBookViewController alloc]init:[self.bookName objectAtIndex:row]];
-    [self.navigationController pushViewController:everybookController animated:YES];
-//    [collectionView deselectRowAtIndexPath:indexPath animated:YES];
-    
+    [self.navigationController pushViewController:everybookController animated:YES];    
 }
 /*
 #pragma mark - Navigation

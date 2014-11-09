@@ -11,5 +11,4 @@
 @interface EveryBook : UIView
 -(void)theUpperData:(UITableViewCell*)onecell titlelabel:(NSString *)bookname authorlabel:(NSString *)bookauthor pricelabel:(NSString *)bookprice image:(UIImage *)bookimage;
 -(void)theLowerHalf:(UITableViewCell*)secondcell summarylabel:(NSString *)booksummary;
-
 @end
