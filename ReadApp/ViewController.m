@@ -76,12 +76,12 @@
         [self.view addSubview:view];
         flag = 1;
     }
-else if (flag == 1)
-{
+    else if (flag == 1)
+    {
     [pictureCtrl removeFromParentViewController];
     [self.view addSubview:m_tableView];
     flag = 0;
-}
+    }
 }
 - (void)setupLeftMenuButton
 {
