@@ -8,9 +8,7 @@
 
 #import "BookInformation.h"
 @implementation BookInformation
-//@synthesize path;
 @synthesize book;
-//@synthesize listArrayBook;
 -(void)getdataBookInformation
 {
     //将数组list保存到本地并获取数据

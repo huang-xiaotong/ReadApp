@@ -13,7 +13,6 @@
 		9A588A491A00972F00049A10 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A588A481A00972F00049A10 /* CollectionViewController.m */; };
 		9A6D47E51A033605007E7FBC /* EveryBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D47E41A033605007E7FBC /* EveryBookViewController.m */; };
 		9A6D47E91A03387F007E7FBC /* BookInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D47E81A03387F007E7FBC /* BookInformation.m */; };
-		9A6D47EC1A033CB5007E7FBC /* EveryBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6D47EB1A033CB5007E7FBC /* EveryBook.m */; };
 		9A6D47F11A0360A2007E7FBC /* 深入理解计算机系统l.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6D47EE1A0360A1007E7FBC /* 深入理解计算机系统l.png */; };
 		9A6D47F21A0360A2007E7FBC /* 深入理解计算机系统m.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A6D47EF1A0360A2007E7FBC /* 深入理解计算机系统m.png */; };
 		9A6D47F31A0360A2007E7FBC /* 深入理解计算机系统s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9A6D47F01A0360A2007E7FBC /* 深入理解计算机系统s.jpg */; };
@@ -33,6 +32,8 @@
 		9A6E134C19F4FA0B006C9E50 /* ReadAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6E134B19F4FA0B006C9E50 /* ReadAppTests.m */; };
 		9A890BA319FBA4EA00AAFA1D /* CenterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A890BA219FBA4EA00AAFA1D /* CenterView.m */; };
 		9AB6498B19F74F100071B60C /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB6498A19F74F0F0071B60C /* LeftViewController.m */; };
+		9AF935101A15F281002DAC38 /* EveryBookSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF9350F1A15F281002DAC38 /* EveryBookSummaryTableViewCell.m */; };
+		9AF935131A15F93E002DAC38 /* EveryBookUpDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF935121A15F93E002DAC38 /* EveryBookUpDataTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,6 @@
 		9A6D47E41A033605007E7FBC /* EveryBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryBookViewController.m; sourceTree = "<group>"; };
 		9A6D47E71A03387F007E7FBC /* BookInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookInformation.h; sourceTree = "<group>"; };
 		9A6D47E81A03387F007E7FBC /* BookInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookInformation.m; sourceTree = "<group>"; };
-		9A6D47EA1A033CB5007E7FBC /* EveryBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryBook.h; sourceTree = "<group>"; };
-		9A6D47EB1A033CB5007E7FBC /* EveryBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryBook.m; sourceTree = "<group>"; };
 		9A6D47EE1A0360A1007E7FBC /* 深入理解计算机系统l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "深入理解计算机系统l.png"; sourceTree = "<group>"; };
 		9A6D47EF1A0360A2007E7FBC /* 深入理解计算机系统m.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "深入理解计算机系统m.png"; sourceTree = "<group>"; };
 		9A6D47F01A0360A2007E7FBC /* 深入理解计算机系统s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "深入理解计算机系统s.jpg"; sourceTree = "<group>"; };
@@ -86,6 +85,10 @@
 		9A890BA219FBA4EA00AAFA1D /* CenterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterView.m; sourceTree = "<group>"; };
 		9AB6498919F74F0F0071B60C /* LeftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
 		9AB6498A19F74F0F0071B60C /* LeftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
+		9AF9350E1A15F281002DAC38 /* EveryBookSummaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryBookSummaryTableViewCell.h; sourceTree = "<group>"; };
+		9AF9350F1A15F281002DAC38 /* EveryBookSummaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryBookSummaryTableViewCell.m; sourceTree = "<group>"; };
+		9AF935111A15F93E002DAC38 /* EveryBookUpDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryBookUpDataTableViewCell.h; sourceTree = "<group>"; };
+		9AF935121A15F93E002DAC38 /* EveryBookUpDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryBookUpDataTableViewCell.m; sourceTree = "<group>"; };
 		BFF276663F9ACFE428BF4476 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -240,10 +243,12 @@
 			children = (
 				9A890BA119FBA4EA00AAFA1D /* CenterView.h */,
 				9A890BA219FBA4EA00AAFA1D /* CenterView.m */,
-				9A6D47EA1A033CB5007E7FBC /* EveryBook.h */,
-				9A6D47EB1A033CB5007E7FBC /* EveryBook.m */,
 				9A21BCBE1A0F1349004AE7A3 /* TestView.h */,
 				9A21BCBF1A0F1349004AE7A3 /* TestView.m */,
+				9AF9350E1A15F281002DAC38 /* EveryBookSummaryTableViewCell.h */,
+				9AF9350F1A15F281002DAC38 /* EveryBookSummaryTableViewCell.m */,
+				9AF935111A15F93E002DAC38 /* EveryBookUpDataTableViewCell.h */,
+				9AF935121A15F93E002DAC38 /* EveryBookUpDataTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -398,10 +403,11 @@
 				9A6E133119F4FA0B006C9E50 /* AppDelegate.m in Sources */,
 				9A27FD9E1A0C5FC200683A1A /* testViewController.m in Sources */,
 				9A6E132D19F4FA0B006C9E50 /* main.m in Sources */,
+				9AF935131A15F93E002DAC38 /* EveryBookUpDataTableViewCell.m in Sources */,
 				9A21BCC01A0F1349004AE7A3 /* TestView.m in Sources */,
 				9A6D47E51A033605007E7FBC /* EveryBookViewController.m in Sources */,
+				9AF935101A15F281002DAC38 /* EveryBookSummaryTableViewCell.m in Sources */,
 				9A890BA319FBA4EA00AAFA1D /* CenterView.m in Sources */,
-				9A6D47EC1A033CB5007E7FBC /* EveryBook.m in Sources */,
 				9A588A491A00972F00049A10 /* CollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

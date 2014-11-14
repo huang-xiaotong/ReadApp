@@ -4,12 +4,13 @@
 //
 //  Created by xyooyy on 14/10/31.
 //  Copyright (c) 2014年 黄晓彤. All rights reserved.
-//
+//  http://blog.csdn.net/rhljiayou/article/details/17506921 自定义tableviewcell
 
 #import "EveryBookViewController.h"
-#import "EveryBook.h"
 #import "BookInformation.h"
 #import "CenterView.h"
+#import "EveryBookSummaryTableViewCell.h"
+#import "EveryBookUpDataTableViewCell.h"
 @interface EveryBookViewController ()
 
 @end
@@ -71,15 +72,14 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     int i = (unsigned long)[listBookName indexOfObject:name];
-    EveryBook *everybook = [[EveryBook alloc]init];
-    if (indexPath.row == 0) 
-        [everybook theUpperData:cell titlelabel:[book[i] objectForKey:@"title"] authorlabel:[book[i] objectForKey:@"author"] pricelabel:[book[i] objectForKey:@"price"] image:[book[i] objectForKey:@"Midimage"]];
+    if (indexPath.row == 0)
+        cell = [[EveryBookUpDataTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier bookImage:[book[i] objectForKey:@"Midimage"] bookName:[book[i] objectForKey:@"title"] bookAuthor:[book[i] objectForKey:@"author"] bookPrice:[book[i] objectForKey:@"price"]];
     if (indexPath.row == 1) {
         cell.backgroundColor = [UIColor grayColor];
         cell.textLabel.text = @"简介:";
     }
     if (indexPath.row == 2)
-        [everybook theLowerHalf:cell summarylabel:[book[i] objectForKey:@"summary"]];
+        cell = [[EveryBookSummaryTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier summarylabel:[book[i] objectForKey:@"summary"]];
     return cell;
 }
 /*

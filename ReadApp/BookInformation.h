@@ -15,5 +15,4 @@
 }
 -(NSMutableArray *)bookinformation;
 @property (nonatomic, retain)NSArray *book;
-//@property (nonatomic, retain)NSMutableArray *listArrayBook;
 @end
