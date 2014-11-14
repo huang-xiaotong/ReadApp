@@ -25,9 +25,9 @@
 @end
 @implementation ViewController
 @synthesize flag;
-@synthesize m_tableView;
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     flag = 0;
     self.title = @"书单";
     self.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
@@ -38,26 +38,17 @@
     m_tableView.dataSource = self;
     [self setupRightPicButton];
     [self setupLeftMenuButton];
-    [self CenterView];
-    [super viewDidLoad];
+    [self getlistBookName];
 }
--(void) CenterView
+-(NSMutableArray *)getlistBookName
 {
-    BookInformation *bookInformation = [[BookInformation alloc]init];
-    book = [[NSArray alloc]initWithArray:[bookInformation bookinformation]];
-    listbookAuthor = [[NSMutableArray alloc]init];
-    listbookName = [[NSMutableArray alloc]init];
-    listbookPicture = [[NSMutableArray alloc]init];
-    listbookPrice = [[NSMutableArray alloc]init];
-    listbookSummary = [[NSMutableArray alloc]init];
+     NSArray *book = [self getBook];
+    NSMutableArray *getlistbookName = [[NSMutableArray alloc]init];
     for (int i = 0; i<[book count]; i++)
     {
-    [listbookPicture addObject:[book[i] objectForKey:@"smallimage"]];
-    [listbookName addObject:[book[i] objectForKey:@"title"]];
-    [listbookAuthor addObject:[book[i] objectForKey:@"author"]];
-    [listbookPrice addObject:[book[i] objectForKey:@"price"]];
-    [listbookSummary addObject: [book[i] objectForKey:@"summary"]];
+        [getlistbookName addObject:[book[i] objectForKey:@"title"]];
     }
+    return getlistbookName;
 }
 -(void)setupRightPicButton
 {
@@ -99,9 +90,9 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSArray *listbookName = [self getlistBookName];
     return listbookName.count;
 }
 -(UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -113,13 +104,36 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
         cell.backgroundColor = [UIColor lightTextColor];
     }
+    [self CellShow:indexPath.row :cell.contentView];
+    return cell;
+}
+-(void)CellShow :(int)row :(UIView*)contentview
+{
+    NSMutableArray *listbookName = [self getlistBookName];
+    NSArray *book = [self getBook];
     CenterView *centerView = [[CenterView alloc]init];
-    [centerView imageViewANDBookName:[listbookPicture objectAtIndex:indexPath.row] :[listbookName objectAtIndex:indexPath.row] :cell.contentView :[listbookPrice objectAtIndex:indexPath.row]];
-    [centerView AuthorAndSummary:[listbookAuthor objectAtIndex:indexPath.row] :[listbookSummary objectAtIndex:indexPath.row] :cell.contentView];
-        return cell;
+    NSMutableArray *Picture = [[NSMutableArray alloc]init];
+    NSMutableArray *Author = [[NSMutableArray alloc]init];
+    NSMutableArray *Summary = [[NSMutableArray alloc]init];
+    NSMutableArray *Price = [[NSMutableArray alloc]init];
+    for (int index = 0; index < [book count]; index++) {
+        [Picture addObject:[book[index] objectForKey:@"smallimage"]];
+        [Author addObject:[book[index] objectForKey:@"author"]];
+        [Summary addObject:[book[index] objectForKey:@"summary"]];
+        [Price addObject:[book[index] objectForKey:@"price"]];
+    }
+    [centerView imageViewANDBookName:[Picture objectAtIndex:row] :[listbookName objectAtIndex:row] :contentview :[Price objectAtIndex:row]];
+    [centerView AuthorAndSummary:[Author objectAtIndex:row] :[Summary objectAtIndex:row] :contentview];
+}
+-(NSArray *)getBook
+{
+    BookInformation *bookInformation = [[BookInformation alloc]init];
+    NSArray *book = [bookInformation bookinformation];
+    return book;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger row = indexPath.row;
+    NSArray *listbookName = [self getlistBookName];
     EveryBookViewController *everybookController = [[EveryBookViewController alloc]init:[listbookName objectAtIndex:row]];
     [self.navigationController pushViewController:everybookController animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

@@ -11,16 +11,6 @@
 <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *m_tableView;
-    NSArray *book;
-    NSMutableArray *listbookPicture;
-    NSMutableArray *listbookName;
-    NSMutableArray *listbookAuthor;
-    NSMutableArray *listbookPrice;
-    NSMutableArray *listbookSummary;
-    
 }
 @property int flag;
-@property (nonatomic, retain)UITableView *m_tableView;
--(void)rightButtonPress;
-//-(id)init :(UIViewController *)center;
 @end

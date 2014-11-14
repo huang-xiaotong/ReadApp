@@ -8,14 +8,14 @@
 
 #import "BookInformation.h"
 @implementation BookInformation
-@synthesize path;
+//@synthesize path;
 @synthesize book;
-@synthesize listArrayBook;
+//@synthesize listArrayBook;
 -(void)getdataBookInformation
 {
     //将数组list保存到本地并获取数据
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
-    path=[paths objectAtIndex:0];
+    NSString *path=[paths objectAtIndex:0];
     NSString *orderfile=[path stringByAppendingPathComponent:@"read.plist"];
     NSFileManager *ordered = [NSFileManager defaultManager];
     if (![[NSFileManager defaultManager] fileExistsAtPath:orderfile])
@@ -33,12 +33,12 @@
     [ordered createFileAtPath:orderfile contents:nil attributes:nil];
     NSArray *bookinfor = [[NSArray alloc]initWithArray:list];
     [bookinfor writeToFile:orderfile atomically:YES];
-        NSString *file=[self.path stringByAppendingPathComponent:@"read.plist"];
+        NSString *file=[path stringByAppendingPathComponent:@"read.plist"];
         NSArray *booked = [[NSArray alloc]initWithContentsOfFile:file];
         self.book = booked;
     }
         else{
-    NSString *file=[self.path stringByAppendingPathComponent:@"read.plist"];
+    NSString *file=[path stringByAppendingPathComponent:@"read.plist"];
     NSArray *booked = [[NSArray alloc]initWithContentsOfFile:file];
             self.book = booked;
         }
@@ -47,7 +47,7 @@
     for (int i = 0; i<[book count]; i++)
     {
     listBookInformation = [[NSMutableDictionary alloc]initWithObjectsAndKeys:[book[i] objectForKey:@"price"],@"price",[[book[i] objectForKey:@"author"] componentsJoinedByString:@","],@"author",[book[i] objectForKey:@"title"],@"title",[self getimage:[[book[i] objectForKey:@"images"] objectForKey:@"small"]],@"smallimage",[self getimage:[[book[i] objectForKey:@"images"] objectForKey:@"medium"]],@"Midimage",[book[i] objectForKey:@"summary"],@"summary", nil];
-        [self.listArrayBook addObject:listBookInformation];
+        [listArrayBook addObject:listBookInformation];
     }
 }
 -(UIImage *)getimage :(NSString *)http
@@ -60,7 +60,7 @@
 -(NSMutableArray *)bookinformation
 {
     [self getdataBookInformation];
-    return self.listArrayBook;
+    return listArrayBook;
 }
 
 @end

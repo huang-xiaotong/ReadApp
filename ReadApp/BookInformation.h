@@ -14,7 +14,6 @@
     NSMutableArray *listArrayBook;
 }
 -(NSMutableArray *)bookinformation;
-@property (nonatomic, retain)NSString *path;
 @property (nonatomic, retain)NSArray *book;
-@property (nonatomic, retain)NSMutableArray *listArrayBook;
+//@property (nonatomic, retain)NSMutableArray *listArrayBook;
 @end
