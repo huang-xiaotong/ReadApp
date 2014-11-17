@@ -9,10 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface BookInformation : NSObject
-{
-    NSMutableDictionary *listBookInformation;
-    NSMutableArray *listArrayBook;
-}
 -(NSMutableArray *)bookinformation;
-@property (nonatomic, retain)NSArray *book;
+//-(NSArray *)getdataBookAndSave;
 @end

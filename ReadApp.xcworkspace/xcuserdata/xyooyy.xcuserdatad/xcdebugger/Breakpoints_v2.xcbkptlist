@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadApp/ViewController.m"
-            timestampString = "437638455.580065"
+            timestampString = "437906291.622821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189">
+            startingLineNumber = "253"
+            endingLineNumber = "253">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -55,13 +55,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ReadApp/CollectionViewController.m"
-            timestampString = "437643990.88085"
+            filePath = "ReadApp/BookImageView.m"
+            timestampString = "437894920.018251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-getdata"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-setImageURL:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

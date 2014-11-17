@@ -36,6 +36,13 @@
     [self.view addSubview:m_tableView];
     m_tableView.delegate = self;
     m_tableView.dataSource = self;
+    if (_refreshHeaderView == nil) {
+        EGORefreshTableHeaderView *view1 = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f -m_tableView.bounds.size.height, m_tableView.frame.size.width, self.view.bounds.size.height)];
+        view1.delegate = self;
+        [m_tableView addSubview:view1];
+        _refreshHeaderView = view1;
+    }
+    [_refreshHeaderView refreshLastUpdatedDate];
     [self setupRightPicButton];
     [self setupLeftMenuButton];
     [self getlistBookName];
@@ -117,12 +124,13 @@
     NSMutableArray *Summary = [[NSMutableArray alloc]init];
     NSMutableArray *Price = [[NSMutableArray alloc]init];
     for (int index = 0; index < [book count]; index++) {
-        [Picture addObject:[book[index] objectForKey:@"smallimage"]];
+        [Picture addObject:[book[index] objectForKey:@"smallImage"]];
         [Author addObject:[book[index] objectForKey:@"author"]];
         [Summary addObject:[book[index] objectForKey:@"summary"]];
         [Price addObject:[book[index] objectForKey:@"price"]];
     }
-    [centerView imageViewANDBookName:[Picture objectAtIndex:row] :[listbookName objectAtIndex:row] :contentview :[Price objectAtIndex:row]];
+    [centerView BookName:[listbookName objectAtIndex:row] :contentview :[Price objectAtIndex:row]];
+    [centerView imageView:[Picture objectAtIndex:row] :centerView];
     [centerView AuthorAndSummary:[Author objectAtIndex:row] :[Summary objectAtIndex:row] :contentview];
 }
 -(NSArray *)getBook
@@ -139,5 +147,61 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 }
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
 
+- (void)reloadTableViewDataSource{
+	
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+	_reloading = YES;
+	
+}
+
+- (void)doneLoadingTableViewData{
+	
+	//  model should call this when its done loading
+	_reloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:m_tableView];
+	
+}
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	
+}
+
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+	
+	[self reloadTableViewDataSource];
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+	
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return _reloading; // should return if data source model is reloading
+	
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
 @end

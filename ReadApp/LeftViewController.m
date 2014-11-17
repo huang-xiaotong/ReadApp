@@ -57,15 +57,13 @@
     cell.contentView.backgroundColor =[UIColor colorWithRed:78.0/255.0 green:200.0/255.0 blue:200.0/255.0 alpha:1.0];
     if (indexPath.row == 0) {
         cell.textLabel.text = @"书单";
-        cell.textLabel.font = [UIFont boldSystemFontOfSize:16];
-        cell.textLabel.textColor = [UIColor blueColor];
     }
     else if (indexPath.row == 1)
     {
         cell.textLabel.text = @"test";
-        cell.textLabel.font = [UIFont boldSystemFontOfSize:16];
-        cell.textLabel.textColor = [UIColor blueColor];
     }
+    cell.textLabel.font = [UIFont boldSystemFontOfSize:16];
+    cell.textLabel.textColor = [UIColor blueColor];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

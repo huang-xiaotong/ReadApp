@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		776D04F1727E9E2F7C1A6D68 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF276663F9ACFE428BF4476 /* libPods.a */; };
+		9A2167761A199A82006A9C37 /* BookImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2167751A199A82006A9C37 /* BookImageView.m */; };
+		9A2167781A19A50E006A9C37 /* loading39.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9A2167771A19A50E006A9C37 /* loading39.gif */; };
+		9A21677A1A19CC26006A9C37 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2167791A19CC25006A9C37 /* QuartzCore.framework */; };
+		9A2167801A19DF59006A9C37 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A21677F1A19DF59006A9C37 /* EGORefreshTableHeaderView.m */; };
+		9A2167831A19DFAC006A9C37 /* TableViewPullAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2167821A19DFAC006A9C37 /* TableViewPullAppDelegate.m */; };
+		9A21678D1A19DFDA006A9C37 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2167851A19DFDA006A9C37 /* blackArrow.png */; };
+		9A21678E1A19DFDA006A9C37 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2167861A19DFDA006A9C37 /* blackArrow@2x.png */; };
+		9A21678F1A19DFDA006A9C37 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2167871A19DFDA006A9C37 /* blueArrow.png */; };
+		9A2167901A19DFDA006A9C37 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2167881A19DFDA006A9C37 /* blueArrow@2x.png */; };
+		9A2167911A19DFDA006A9C37 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2167891A19DFDA006A9C37 /* grayArrow.png */; };
+		9A2167921A19DFDA006A9C37 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A21678A1A19DFDA006A9C37 /* grayArrow@2x.png */; };
+		9A2167931A19DFDA006A9C37 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A21678B1A19DFDA006A9C37 /* whiteArrow.png */; };
+		9A2167941A19DFDA006A9C37 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A21678C1A19DFDA006A9C37 /* whiteArrow@2x.png */; };
 		9A21BCC01A0F1349004AE7A3 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A21BCBF1A0F1349004AE7A3 /* TestView.m */; };
 		9A27FD9E1A0C5FC200683A1A /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A27FD9D1A0C5FC200683A1A /* testViewController.m */; };
 		9A588A491A00972F00049A10 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A588A481A00972F00049A10 /* CollectionViewController.m */; };
@@ -49,6 +62,22 @@
 /* Begin PBXFileReference section */
 		04A9F88C3AF10015806EA0E7 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		985989BC1DB5456418470B24 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9A2167741A199A81006A9C37 /* BookImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookImageView.h; sourceTree = "<group>"; };
+		9A2167751A199A82006A9C37 /* BookImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookImageView.m; sourceTree = "<group>"; };
+		9A2167771A19A50E006A9C37 /* loading39.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading39.gif; sourceTree = "<group>"; };
+		9A2167791A19CC25006A9C37 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9A21677E1A19DF59006A9C37 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGORefreshTableHeaderView.h; path = "../../EGOTableViewPullRefresh-master/EGOTableViewPullRefresh/Classes/View/EGORefreshTableHeaderView.h"; sourceTree = "<group>"; };
+		9A21677F1A19DF59006A9C37 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGORefreshTableHeaderView.m; path = "../../EGOTableViewPullRefresh-master/EGOTableViewPullRefresh/Classes/View/EGORefreshTableHeaderView.m"; sourceTree = "<group>"; };
+		9A2167811A19DFAC006A9C37 /* TableViewPullAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewPullAppDelegate.h; path = "../../EGOTableViewPullRefresh-master/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.h"; sourceTree = "<group>"; };
+		9A2167821A19DFAC006A9C37 /* TableViewPullAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewPullAppDelegate.m; path = "../../EGOTableViewPullRefresh-master/Demo/TableViewPull/Classes/Delegate/TableViewPullAppDelegate.m"; sourceTree = "<group>"; };
+		9A2167851A19DFDA006A9C37 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		9A2167861A19DFDA006A9C37 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		9A2167871A19DFDA006A9C37 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		9A2167881A19DFDA006A9C37 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		9A2167891A19DFDA006A9C37 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		9A21678A1A19DFDA006A9C37 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		9A21678B1A19DFDA006A9C37 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		9A21678C1A19DFDA006A9C37 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		9A21BCBE1A0F1349004AE7A3 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
 		9A21BCBF1A0F1349004AE7A3 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		9A27FD9C1A0C5FC200683A1A /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
@@ -97,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A21677A1A19CC26006A9C37 /* QuartzCore.framework in Frameworks */,
 				9A6E132319F4FA0B006C9E50 /* CoreGraphics.framework in Frameworks */,
 				9A6E132519F4FA0B006C9E50 /* UIKit.framework in Frameworks */,
 				9A6E132119F4FA0B006C9E50 /* Foundation.framework in Frameworks */,
@@ -117,6 +147,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A2167841A19DFDA006A9C37 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9A2167851A19DFDA006A9C37 /* blackArrow.png */,
+				9A2167861A19DFDA006A9C37 /* blackArrow@2x.png */,
+				9A2167871A19DFDA006A9C37 /* blueArrow.png */,
+				9A2167881A19DFDA006A9C37 /* blueArrow@2x.png */,
+				9A2167891A19DFDA006A9C37 /* grayArrow.png */,
+				9A21678A1A19DFDA006A9C37 /* grayArrow@2x.png */,
+				9A21678B1A19DFDA006A9C37 /* whiteArrow.png */,
+				9A21678C1A19DFDA006A9C37 /* whiteArrow@2x.png */,
+			);
+			name = Resources;
+			path = "../../EGOTableViewPullRefresh-master/EGOTableViewPullRefresh/Resources";
+			sourceTree = "<group>";
+		};
+		9A2167951A19E1F8006A9C37 /* egoRefreshTableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				9A2167811A19DFAC006A9C37 /* TableViewPullAppDelegate.h */,
+				9A2167821A19DFAC006A9C37 /* TableViewPullAppDelegate.m */,
+				9A21677E1A19DF59006A9C37 /* EGORefreshTableHeaderView.h */,
+				9A21677F1A19DF59006A9C37 /* EGORefreshTableHeaderView.m */,
+			);
+			name = egoRefreshTableHeaderView;
+			sourceTree = "<group>";
+		};
+		9A2167961A19E23A006A9C37 /* everyBookTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9AF9350E1A15F281002DAC38 /* EveryBookSummaryTableViewCell.h */,
+				9AF9350F1A15F281002DAC38 /* EveryBookSummaryTableViewCell.m */,
+				9AF935111A15F93E002DAC38 /* EveryBookUpDataTableViewCell.h */,
+				9AF935121A15F93E002DAC38 /* EveryBookUpDataTableViewCell.m */,
+			);
+			name = everyBookTableViewCell;
+			sourceTree = "<group>";
+		};
 		9A6D47E61A033850007E7FBC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +197,7 @@
 		9A6D47ED1A036061007E7FBC /* Picture */ = {
 			isa = PBXGroup;
 			children = (
+				9A2167771A19A50E006A9C37 /* loading39.gif */,
 				9A6D47EE1A0360A1007E7FBC /* 深入理解计算机系统l.png */,
 				9A6D47EF1A0360A2007E7FBC /* 深入理解计算机系统m.png */,
 				9A6D47F01A0360A2007E7FBC /* 深入理解计算机系统s.jpg */,
@@ -159,6 +228,7 @@
 		9A6E131F19F4FA0B006C9E50 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A2167791A19CC25006A9C37 /* QuartzCore.framework */,
 				9A6E132019F4FA0B006C9E50 /* Foundation.framework */,
 				9A6E132219F4FA0B006C9E50 /* CoreGraphics.framework */,
 				9A6E132419F4FA0B006C9E50 /* UIKit.framework */,
@@ -171,6 +241,7 @@
 		9A6E132619F4FA0B006C9E50 /* ReadApp */ = {
 			isa = PBXGroup;
 			children = (
+				9A2167841A19DFDA006A9C37 /* Resources */,
 				9A6D47ED1A036061007E7FBC /* Picture */,
 				9A6D47E61A033850007E7FBC /* Model */,
 				9AD3E8B419F8D4FD0082F4D8 /* View */,
@@ -241,14 +312,14 @@
 		9AD3E8B419F8D4FD0082F4D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9A2167961A19E23A006A9C37 /* everyBookTableViewCell */,
+				9A2167951A19E1F8006A9C37 /* egoRefreshTableHeaderView */,
 				9A890BA119FBA4EA00AAFA1D /* CenterView.h */,
 				9A890BA219FBA4EA00AAFA1D /* CenterView.m */,
 				9A21BCBE1A0F1349004AE7A3 /* TestView.h */,
 				9A21BCBF1A0F1349004AE7A3 /* TestView.m */,
-				9AF9350E1A15F281002DAC38 /* EveryBookSummaryTableViewCell.h */,
-				9AF9350F1A15F281002DAC38 /* EveryBookSummaryTableViewCell.m */,
-				9AF935111A15F93E002DAC38 /* EveryBookUpDataTableViewCell.h */,
-				9AF935121A15F93E002DAC38 /* EveryBookUpDataTableViewCell.m */,
+				9A2167741A199A81006A9C37 /* BookImageView.h */,
+				9A2167751A199A82006A9C37 /* BookImageView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -341,9 +412,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6D47F11A0360A2007E7FBC /* 深入理解计算机系统l.png in Resources */,
+				9A21678D1A19DFDA006A9C37 /* blackArrow.png in Resources */,
+				9A2167921A19DFDA006A9C37 /* grayArrow@2x.png in Resources */,
+				9A2167931A19DFDA006A9C37 /* whiteArrow.png in Resources */,
 				9A6D47F21A0360A2007E7FBC /* 深入理解计算机系统m.png in Resources */,
 				9A6E133919F4FA0B006C9E50 /* Images.xcassets in Resources */,
 				9A6D47F31A0360A2007E7FBC /* 深入理解计算机系统s.jpg in Resources */,
+				9A2167941A19DFDA006A9C37 /* whiteArrow@2x.png in Resources */,
+				9A21678E1A19DFDA006A9C37 /* blackArrow@2x.png in Resources */,
+				9A2167911A19DFDA006A9C37 /* grayArrow.png in Resources */,
+				9A2167901A19DFDA006A9C37 /* blueArrow@2x.png in Resources */,
+				9A2167781A19A50E006A9C37 /* loading39.gif in Resources */,
+				9A21678F1A19DFDA006A9C37 /* blueArrow.png in Resources */,
 				9A6E132B19F4FA0B006C9E50 /* InfoPlist.strings in Resources */,
 				9A6E133419F4FA0B006C9E50 /* Main.storyboard in Resources */,
 			);
@@ -406,8 +486,11 @@
 				9AF935131A15F93E002DAC38 /* EveryBookUpDataTableViewCell.m in Sources */,
 				9A21BCC01A0F1349004AE7A3 /* TestView.m in Sources */,
 				9A6D47E51A033605007E7FBC /* EveryBookViewController.m in Sources */,
+				9A2167761A199A82006A9C37 /* BookImageView.m in Sources */,
 				9AF935101A15F281002DAC38 /* EveryBookSummaryTableViewCell.m in Sources */,
+				9A2167831A19DFAC006A9C37 /* TableViewPullAppDelegate.m in Sources */,
 				9A890BA319FBA4EA00AAFA1D /* CenterView.m in Sources */,
+				9A2167801A19DF59006A9C37 /* EGORefreshTableHeaderView.m in Sources */,
 				9A588A491A00972F00049A10 /* CollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

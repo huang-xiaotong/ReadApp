@@ -8,57 +8,88 @@
 
 #import "BookInformation.h"
 @implementation BookInformation
-@synthesize book;
--(void)getdataBookInformation
+-(NSArray *)analysisDataGetBookInformation
 {
-    //将数组list保存到本地并获取数据
-    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
-    NSString *path=[paths objectAtIndex:0];
-    NSString *orderfile=[path stringByAppendingPathComponent:@"read.plist"];
-    NSFileManager *ordered = [NSFileManager defaultManager];
-    if (![[NSFileManager defaultManager] fileExistsAtPath:orderfile])
-    {
     NSError *error;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.douban.com/v2/book/search?tag=computer"]];
-    
-    //将请求的url数据放到NSData对象中
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    
-    //IOS5自带解析类NSJSONSerialization从response中解析出数据放到字典中
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
-    //获取数组list的内容
-    NSArray *list = [dic objectForKey:@"books"];
-    [ordered createFileAtPath:orderfile contents:nil attributes:nil];
-    NSArray *bookinfor = [[NSArray alloc]initWithArray:list];
-    [bookinfor writeToFile:orderfile atomically:YES];
+    NSArray *listbook = [dic objectForKey:@"books"];
+    return listbook;
+}
+-(NSString *)path
+{
+    NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    NSString *path=[paths objectAtIndex:0];
+    return path;
+}
+-(NSArray *)getdataBookInformation
+{
+    NSString *path = [self path];
+    NSString *orderfile=[path stringByAppendingPathComponent:@"read.plist"];
+    if (![[NSFileManager defaultManager] fileExistsAtPath:orderfile]){
+    NSArray *BookInformation = [self analysisDataGetBookInformation];
+    [[NSFileManager defaultManager] createFileAtPath:orderfile contents:nil attributes:nil];
+    [BookInformation writeToFile:orderfile atomically:YES];
         NSString *file=[path stringByAppendingPathComponent:@"read.plist"];
         NSArray *booked = [[NSArray alloc]initWithContentsOfFile:file];
-        self.book = booked;
+        return booked;
     }
         else{
     NSString *file=[path stringByAppendingPathComponent:@"read.plist"];
     NSArray *booked = [[NSArray alloc]initWithContentsOfFile:file];
-            self.book = booked;
+            return booked;
         }
-    //初始化成员变量
-    listArrayBook = [[NSMutableArray alloc]init];
+}
+-(NSMutableArray *)bookInformation
+{
+    NSArray *book = [self getdataBookInformation];
+    NSMutableArray *listArrayBook = [[NSMutableArray alloc]init];
     for (int i = 0; i<[book count]; i++)
     {
-    listBookInformation = [[NSMutableDictionary alloc]initWithObjectsAndKeys:[book[i] objectForKey:@"price"],@"price",[[book[i] objectForKey:@"author"] componentsJoinedByString:@","],@"author",[book[i] objectForKey:@"title"],@"title",[self getimage:[[book[i] objectForKey:@"images"] objectForKey:@"small"]],@"smallimage",[self getimage:[[book[i] objectForKey:@"images"] objectForKey:@"medium"]],@"Midimage",[book[i] objectForKey:@"summary"],@"summary", nil];
+//    NSDictionary *listBookInformation = [[NSDictionary alloc]initWithObjectsAndKeys:[book[i] objectForKey:@"price"],@"price",[[book[i] objectForKey:@"author"] componentsJoinedByString:@","],@"author",[book[i] objectForKey:@"title"],@"title",[self getImage:@"small"][i],@"smallimage",[self getImage:@"medium"][i],@"Midimage",[book[i] objectForKey:@"summary"],@"summary", nil];
+//        [listArrayBook addObject:listBookInformation];
+        NSDictionary *listBookInformation = [[NSDictionary alloc]initWithObjectsAndKeys:[book[i] objectForKey:@"price"],@"price",[[book[i] objectForKey:@"author"] componentsJoinedByString:@","],@"author",[book[i] objectForKey:@"title"],@"title",[book[i] objectForKey:@"summary"],@"summary",[[book[i] objectForKey:@"images"] objectForKey:@"small"],@"smallImage", [[book[i] objectForKey:@"images"] objectForKey:@"medium"],@"midImage", nil];
         [listArrayBook addObject:listBookInformation];
+
     }
+    return listArrayBook;
 }
--(UIImage *)getimage :(NSString *)http
+-(NSMutableArray*)getImage :(NSString *)imageType
 {
-    NSURL * url = [NSURL URLWithString:http];
-    NSData * data = [[NSData alloc]initWithContentsOfURL:url];
-    UIImage *image = [[UIImage alloc]initWithData:data];
-    return image;
+    NSMutableArray *Image = [[NSMutableArray alloc]init];
+    NSArray *book = [self getdataBookInformation];
+    for (int index = 0; index < [book count]; index ++) {
+        NSString *http = [[book[index] objectForKey:@"images"] objectForKey:imageType];
+        NSURL * url = [NSURL URLWithString:http];
+        NSData * data = [[NSData alloc]initWithContentsOfURL:url];
+        UIImage *image = [[UIImage alloc]initWithData:data];
+        [Image addObject:image];
+    }
+    return Image;
 }
+
+//-(NSArray *)getdataBookAndSave
+//{
+//    NSString *path=[self path];
+//    NSString *orderfile=[path stringByAppendingPathComponent:@"book.plist"];
+//    if (![[NSFileManager defaultManager] fileExistsAtPath:orderfile]){
+//        NSArray *listBookInformationNeeds = [self bookInformation];
+//        [[NSFileManager defaultManager] createFileAtPath:orderfile contents:nil attributes:nil];
+//        [listBookInformationNeeds writeToFile:orderfile atomically:YES];
+//        NSLog(@"%@",listBookInformationNeeds[0]);
+//        NSString *file=[path stringByAppendingPathComponent:@"book.plist"];
+//        NSArray *bookNeeds = [[NSArray alloc]initWithContentsOfFile:file];
+//        NSLog(@"bookNeeds:%@",bookNeeds);
+//        return bookNeeds;}
+//    else{
+//        NSString *file=[path stringByAppendingPathComponent:@"book.plist"];
+//        NSArray *bookNeeds = [[NSArray alloc]initWithContentsOfFile:file];
+//        return bookNeeds;}
+//}
 -(NSMutableArray *)bookinformation
 {
-    [self getdataBookInformation];
-    return listArrayBook;
+    return [self bookInformation];
 }
 
 @end

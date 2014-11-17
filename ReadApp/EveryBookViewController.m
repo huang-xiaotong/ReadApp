@@ -42,8 +42,7 @@
     BookInformation *bookInformation = [[BookInformation alloc]init];
     book = [[NSArray alloc]initWithArray:[bookInformation bookinformation]];
     listBookName = [[NSMutableArray alloc]init];
-    for (int i = 0; i<[book count]; i++)
-    {
+    for (int i = 0; i<[book count]; i++){
         [listBookName addObject:[book[i] objectForKey:@"title"]];
         }
 }
@@ -66,18 +65,14 @@
 {
     NSString *CellIdentifier = [NSString stringWithFormat:@"Cell%d",indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
+    if (cell == nil){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];}
     int i = (unsigned long)[listBookName indexOfObject:name];
     if (indexPath.row == 0)
         cell = [[EveryBookUpDataTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier bookImage:[book[i] objectForKey:@"Midimage"] bookName:[book[i] objectForKey:@"title"] bookAuthor:[book[i] objectForKey:@"author"] bookPrice:[book[i] objectForKey:@"price"]];
     if (indexPath.row == 1) {
         cell.backgroundColor = [UIColor grayColor];
-        cell.textLabel.text = @"简介:";
-    }
+        cell.textLabel.text = @"简介:";}
     if (indexPath.row == 2)
         cell = [[EveryBookSummaryTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier summarylabel:[book[i] objectForKey:@"summary"]];
     return cell;

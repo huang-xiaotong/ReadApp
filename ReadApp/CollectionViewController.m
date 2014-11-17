@@ -9,6 +9,7 @@
 #import "CollectionViewController.h"
 #import "EveryBookViewController.h"
 #import "BookInformation.h"
+#import "BookImageView.h"
 @interface CollectionViewController ()
 
 @end
@@ -46,7 +47,7 @@
     BookInformation *bookInformation = [[BookInformation alloc]init];
     for (int i = 0; i<[[bookInformation bookinformation] count]; i++) {
         [self.bookName addObject:[[bookInformation bookinformation][i] objectForKey:@"title"]];
-        [self.bookImage addObject:[[bookInformation bookinformation][i] objectForKey:@"smallimage"]];
+        [self.bookImage addObject:[[bookInformation bookinformation][i] objectForKey:@"smallImage"]];
     }
 }
 - (void)didReceiveMemoryWarning
@@ -54,13 +55,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(UIImageView *)creatImageView :(id)bookimage :(UIView *)view
+-(UIImageView *)creatImageView :(NSString *)imagehttp :(UIView *)view
 {
-    UIImage *image = [[UIImage alloc]init];
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
-    imageView.frame = CGRectMake(0, 0, 96, 100);
-    imageView.image = bookimage;
-    imageView.backgroundColor = [UIColor redColor];
+    BookImageView *imageView = [[BookImageView alloc]init];
+    imageView.imageURL = imagehttp;
+    imageView.placeholderImage = [UIImage imageNamed:@"loading39.gif"];
     [view addSubview:imageView];
     return imageView;
 }
