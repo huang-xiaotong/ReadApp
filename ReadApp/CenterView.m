@@ -27,12 +27,8 @@
 }
 -(UIImageView*)imageBookPicture:(NSString *)imageHttp
 {
-//    UIImage *image = [[UIImage alloc] init];
-//    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-//    imageView.frame = CGRectMake(0, 0, 100, 100);
-//    imageView.image =imageName;
     BookImageView *imageView = [[BookImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-    imageView.placeholderImage =[UIImage imageNamed:@"loading39.gif"];
+    imageView.placeholderImage =[UIImage imageNamed:@"深入理解计算机系统s.jpg"];
     imageView.imageURL = imageHttp;
     return imageView;
 }

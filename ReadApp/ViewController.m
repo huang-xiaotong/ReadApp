@@ -30,14 +30,9 @@
     [super viewDidLoad];
     flag = 0;
     self.title = @"书单";
-    self.view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-    m_tableView = [[UITableView alloc]initWithFrame:self.view.frame];
-    m_tableView.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:m_tableView];
-    m_tableView.delegate = self;
-    m_tableView.dataSource = self;
+    [self tableview];
     if (_refreshHeaderView == nil) {
-        EGORefreshTableHeaderView *view1 = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 10.0f -m_tableView.bounds.size.height, m_tableView.frame.size.width, self.view.bounds.size.height)];
+        EGORefreshTableHeaderView *view1 = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f -self.view.bounds.size.height, self.view.frame.size.width, self.view.bounds.size.height)];
         view1.delegate = self;
         [m_tableView addSubview:view1];
         _refreshHeaderView = view1;
@@ -46,6 +41,15 @@
     [self setupRightPicButton];
     [self setupLeftMenuButton];
     [self getlistBookName];
+}
+-(UIView *) tableview
+{
+    m_tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    m_tableView.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:m_tableView];
+    m_tableView.delegate = self;
+    m_tableView.dataSource = self;
+    return m_tableView;
 }
 -(NSMutableArray *)getlistBookName
 {

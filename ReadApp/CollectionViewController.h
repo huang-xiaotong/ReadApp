@@ -7,13 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "EGORefreshTableHeaderView.h"
 @interface CollectionViewController : UIViewController
-<UICollectionViewDataSource, UICollectionViewDelegate>
+<UICollectionViewDataSource, UICollectionViewDelegate, EGORefreshTableHeaderDelegate>
 {
     NSMutableArray *listNameAndImage;
     UICollectionView *m_collectionView;
+    EGORefreshTableHeaderView *_refreshHeaderView;
+    BOOL _reloading;
 }
 @property (strong, nonatomic)NSMutableArray *bookImage;// 数据源
 @property (nonatomic, retain)NSMutableArray *bookName;
+- (void)reloadTableViewDataSource;
+- (void)doneLoadingTableViewData;
 @end

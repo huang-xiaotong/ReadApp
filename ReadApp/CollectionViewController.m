@@ -27,7 +27,21 @@
 }
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     self.title = @"图片列表";
+    [self collectionView];
+    if (_refreshHeaderView == nil) {
+        EGORefreshTableHeaderView *view1 = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f -self.view.bounds.size.height, self.view.frame.size.width, self.view.bounds.size.height)];
+        view1.delegate = self;
+        [m_collectionView addSubview:view1];
+        _refreshHeaderView = view1;
+    }
+    [_refreshHeaderView refreshLastUpdatedDate];
+    [self getdata];
+    // Do any additional setup after loading the view.
+}
+-(UIView*)collectionView
+{
     UICollectionViewFlowLayout *fl = [[UICollectionViewFlowLayout alloc]init];
     fl.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     fl.minimumLineSpacing = 5;
@@ -36,9 +50,7 @@
     m_collectionView.delegate = self;
     m_collectionView.dataSource = self;
     [self.view addSubview:m_collectionView];
-    [self getdata];
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    return m_collectionView;
 }
 -(void)getdata
 {
@@ -59,7 +71,7 @@
 {
     BookImageView *imageView = [[BookImageView alloc]init];
     imageView.imageURL = imagehttp;
-    imageView.placeholderImage = [UIImage imageNamed:@"loading39.gif"];
+    imageView.placeholderImage = [UIImage imageNamed:@"深入理解计算机系统s.jpg"];
     [view addSubview:imageView];
     return imageView;
 }
@@ -108,4 +120,61 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark -
+#pragma mark Data Source Loading / Reloading Methods
+
+- (void)reloadTableViewDataSource{
+	
+	//  should be calling your tableviews data source model to reload
+	//  put here just for demo
+	_reloading = YES;
+	
+}
+
+- (void)doneLoadingTableViewData{
+	
+	//  model should call this when its done loading
+	_reloading = NO;
+	[_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:m_collectionView];
+	
+}
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	
+}
+
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+	
+	[self reloadTableViewDataSource];
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+	
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return _reloading; // should return if data source model is reloading
+	
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
 @end
